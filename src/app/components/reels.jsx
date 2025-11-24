@@ -182,7 +182,7 @@ const ReelsSection = () => {
 // Main App Component to simulate the webpage
 const Reel = () => {
   return (
-    <div className="section-padding">
+    <div className="section-padding bg-white-50">
       
 
       {/* Hero Section Placeholder */}

@@ -431,7 +431,7 @@ const scrollToSection = (id) => {
                   structured play and joyful academics.
                 </p>
               </div>
-              <div className="grid md:grid-cols-3 gap-8">
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 ">
                 <div
                   data-aos="fade-up"
                   className="neumorphic-gradient-card-green p-8 text-center"
@@ -636,7 +636,7 @@ const scrollToSection = (id) => {
                   </a>
                 </div>
               </div>
-              <div className="mt-10 text-center ">
+              <div className="mt-10 text-center mt-10">
                 <a href="#" className="btn-neumorphic border-animated inline-flex items-center color-dark-pink">Know More About Short Programs
                   <i className="fas fa-arrow-right ml-2"></i></a>
               </div>

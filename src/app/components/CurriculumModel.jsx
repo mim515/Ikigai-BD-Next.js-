@@ -78,14 +78,14 @@ export default function CurriculumModel() {
   return (
     <section className="section-padding">
       <div className="section-container">
-        <header className="text-center mb-12">
-          <h2 className="heading-blue">
+        <div className="secondary-heading">
+          <h2 className="">
             Our Unique Learning Model
           </h2>
-          <p className="text-md color-gray-dark max-w-2xl mx-auto">
+          <p className="">
             We blend the world's best educational philosophies and adapt them with a Bangladeshi heart.
           </p>
-        </header>
+        </div>
 
         {/* Two-part Layout for Cards */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-12">

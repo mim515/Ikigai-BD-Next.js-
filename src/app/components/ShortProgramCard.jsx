@@ -107,11 +107,11 @@ const FeatureItem = ({ iconKey, title, description, color }) => {
 
   return (
     <div className="flex items-start space-x-4 mt-4">
-      <div className={`p-3 rounded-full flex-shrink-0 ${color}`}>
-        <Icon className="w-3 h-3 md:w-5 md:h-5 text-color-white" />
+      <div className={`p-2 rounded-full flex-shrink-0 ${color}`}>
+        <Icon size={15} className="text-color-white" />
       </div>
       <div>
-        <h4 className="font-semibold color-h1-blue text-lg ">{title}</h4>
+        <h4 className="font-semibold color-blue-h1  ">{title}</h4>
         <p className="para">{description}</p>
       </div>
     </div>
@@ -133,10 +133,10 @@ const GroupCard = ({ group, reverse }) => {
           <p className="color-dark-pink font-bold text-sm uppercase tracking-wider mb-2">
             {group.ageRange}
           </p>
-          <h1 className="text-lg md:text-xl font-extrabold color-h1-blue mb-4">
+          <h1 className="text-lg md:text-xl font-extrabold color-blue-h1 mb-4">
             {group.title}
           </h1>
-          <p className="para mb-8">{group.description}</p>
+          <p className="para mb-6">{group.description}</p>
 
           <div className="space-y-4">
             {group.features.map((feature, index) => (
@@ -191,18 +191,15 @@ const ShortProgramCard = () => {
         </div>
 
         <div className="text-center bg-white-50 p-8 rounded-3xl pb-12 mt-8 shadow-lg">
-          <h3 className="color-h1-blue font-extrabold mb-3 text-lg md:text-2xl">
+          <h3 className="color-blue-h1 font-extrabold mb-3 text-lg md:text-2xl">
             Ready for the Next Step?
           </h3>
           <p className="mb-7 para">
             Our short programs provide the perfect support for your child's key milestones. Contact us to learn more or to enroll.
           </p>
-          <a
-            href="#"
-            className="glass py-3 px-6 bg-dark-pink rounded-3xl text-color-white mt-4 inline-block"
-          >
-            Inquire About Programs
-          </a>
+          <div>
+            <a href="#" className="btn-neumorphic border-animated inline-flex items-center">Inquire About Programs</a>
+          </div>
         </div>
       </div>
     </div>

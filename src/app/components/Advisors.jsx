@@ -48,12 +48,12 @@ const TeamCard = ({ member }) => {
         />
 
         {/* Hover Overlay (Same design — fixed bg color) */}
-        <div
+        {/* <div
           className="   
             absolute inset-0 
             flex flex-col justify-end 
             text-left 
-            bg-blue-300/50 
+            bg-blue-300/90 
             translate-y-full group-hover:translate-y-0 group-hover:rounded-2xl group-hover:m-2 group-hover:mt-4
             transition-transform duration-500 ease-in-out 
             px-4 py-6
@@ -65,7 +65,7 @@ const TeamCard = ({ member }) => {
 
           <p className="text-base font-semibold mb-1">Profession</p>
           <p className="text-sm">{member.profession}</p>
-        </div>
+        </div> */}
       </div>
 
       {/* Text */}
@@ -84,11 +84,11 @@ const Advisors = () => {
       <div className="section-container">
 
         {/* Section Heading */}
-        <div className="text-center mb-12">
-          <h2 className='heading-blue'>
+        <div className="secondary-heading">
+          <h2 className=''>
             <span>Our Advisors</span>
           </h2>
-          <p className='para'>
+          <p className=''>
             Guided by a passionate team dedicated to nurturing the potential in
             every child.
           </p>

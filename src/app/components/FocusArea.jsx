@@ -80,14 +80,14 @@ const FocusArea = () => {
         </div>
 
         {/* Header Section */}
-        <header className="text-center mb-12">
-          <h1 className="heading-blue">
-            Our Focus Areas – At a Glance
-          </h1>
-          <p className="para">
+        <div className="secondary-heading">
+          <h2 className="">
+            <span>Our Focus Areas – At a Glance</span>
+          </h2>
+          <p className="">
             We nurture the whole child through a balanced blend of care, learning, and purposeful play.
           </p>
-        </header>
+        </div>
 
         {/* Cards Grid Section */}
         <section className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 lg:gap-8">

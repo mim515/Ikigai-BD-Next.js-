@@ -67,7 +67,7 @@ const TeamCard = ({ member }) => {
         />
 
         {/* Hover Overlay (Same design — fixed bg color) */}
-        <div
+        {/* <div
           className="   
             absolute inset-0 
             flex flex-col justify-end 
@@ -84,7 +84,7 @@ const TeamCard = ({ member }) => {
 
           <p className="text-base font-semibold mb-1">Profession</p>
           <p className="text-sm">{member.profession}</p>
-        </div>
+        </div> */}
       </div>
 
       {/* Text */}
@@ -103,11 +103,11 @@ const Advisors = () => {
       <div className="section-container">
 
         {/* Section Heading */}
-        <div className="text-center mb-12">
-          <h2 className='heading-blue'>
+        <div className="secondary-heading">
+          <h2 className=''>
             <span>Board of Directors</span>
           </h2>
-          <p className='para'>
+          <p className=''>
             Providing strategic leadership to ensure every decision aligns with our core values.
           </p>
         </div>

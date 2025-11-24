@@ -67,14 +67,14 @@ const SocializingProgram = () => {
       <div className="secondary-container">
 
         {/* Header Section */}
-        <header className="text-center mb-16">
-          <h1 className="heading-blue">
+        <div className="secondary-heading">
+          <h2 className="">
             Socialization Program
-          </h1>
-          <p className="para">
+          </h2>
+          <p className="">
             Creating daily opportunities for children to connect, collaborate, and grow—gently and joyfully.
           </p>
-        </header>
+        </div>
 
         {/* Two-Column Content Layout */}
         <section className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">

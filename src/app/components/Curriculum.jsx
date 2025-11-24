@@ -124,12 +124,14 @@ export default function Curriculum() {
 
         {/* Preschool Stages Section */}
         <section className="text-center ">
-          <h2 className="heading-blue">
+          <div className="secondary-heading">
+            <h2 className="">
             Our Preschool Stages
           </h2>
-          <p className="color-gray-dark text-sm md:text-md  mt-[-15px] mb-16">
+          <p className="">
             Three distinct stages to guide your child's early learning journey.
           </p>
+          </div>
 
           {/* Cards Container - Responsive Grid */}
           <div className="grid grid-cols-1 gap-8 lg:gap-10 md:grid-cols-2 lg:grid-cols-3 text-left">

@@ -51,7 +51,11 @@ export default function LatestArticles() {
   return (
     <section className="section-padding">
       <div className="secondary-container">
-        <h2 className="text-4xl font-extrabold heading-blue mb-12 text-center">Latest Articles</h2>
+        <div className="secondary-heading">
+          <h2>
+            <span>Latest Articles</span>
+          </h2>
+        </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8">
           {articles.map((article) => (

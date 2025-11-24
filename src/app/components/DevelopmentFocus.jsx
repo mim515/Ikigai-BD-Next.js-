@@ -43,11 +43,11 @@ const DevelopmentFocus = () => {
       <div className="section-container text-center">
         
         {/* --- Header Section --- */}
-        <div className='mb-8'>
-          <h2 className="heading-blue">
-          Our Core Developmental Focus
+        <div className='secondary-heading'>
+          <h2 className="">
+          <span>Our Core Developmental Focus</span>
         </h2>
-        <p className="para max-w-4xl mx-auto">
+        <p className="">
           We are dedicated to nurturing every aspect of your child's growth. Our programs are specially designed to explore each child's inner potential with care.
         </p>
         </div>

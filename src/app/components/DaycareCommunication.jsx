@@ -76,14 +76,14 @@ const DaycareCommunication = () => {
         <div className="secondary-container">
 
           {/* Header Section */}
-          <header className="text-center mb-16">
-            <h1 className="heading-blue">
+          <div className="secondary-heading">
+            <h2 className="">
               Speech & Language Communication
-            </h1>
-            <p className="para">
+            </h2>
+            <p className="">
               Our program builds vocabulary, sentence structure, and clarity through interactive storytelling, music, and peer engagement.
             </p>
-          </header>
+          </div>
 
           {/* Cards Grid Section */}
           <section className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-4 gap-4 lg:gap-10">

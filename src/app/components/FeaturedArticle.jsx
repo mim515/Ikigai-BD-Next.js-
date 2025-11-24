@@ -13,10 +13,7 @@ export default function FeaturedArticle() {
         <h2 className="text-md font-medium color-gray-dark mb-3">Featured Article</h2>
         <div className="bg-white-50 rounded-lg shadow-lg overflow-hidden md:flex transition duration-300 hover:-translate-y-2 hover:shadow-[0_10px_20px_-5px_rgb(0_0_0/0.08),_0_4px_10px_-4px_rgb(0_0_0/0.05)] ">
           
-          {/* 1. TEXT BLOCK 
-            - Use 'order-2' on mobile/default (to place it after the image) 
-            - Use 'md:order-1' on medium screens and up (to place it first/on the left) 
-          */}
+         
           <div className="p-6 flex flex-col justify-center order-2 md:order-1"> 
             <p className="text-sm font-semibold bg-dark-pink text-color-white rounded-2xl px-2 py-1 text-center max-w-[180px] uppercase tracking-wide">CHILD DEVELOPMENT</p>
             <h3 className="color-h1-blue font-bold text-lg mt-2">

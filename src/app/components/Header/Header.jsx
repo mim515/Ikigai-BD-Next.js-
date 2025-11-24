@@ -286,9 +286,17 @@ const Header = () => {
                   About Us
                 </Link>
                 {/* Program Dropdown (Stays as smooth scroll) */}
-                <div className="dropdown relative group z-[2000]">
+                <div className={`dropdown relative group z-[2000] nav-link 
+                ${
+                        currentPath === "/daycare"
+                        || currentPath === "/schooling" 
+                        || currentPath === "/parenting-program" 
+                        || currentPath === "/short-program"
+                        ? "active" : ""
+                }
+                 flex items-center px-5 py-0 text-color-dark-pink hover:bg-pink-white transition-all duration-300 rounded-xl m-2`}>
                   <button
-                    className="nav-link flex items-center cursor-pointer"
+                    className="flex items-center cursor-pointer"
                     aria-haspopup="true"
                   >
                     Program
@@ -467,7 +475,15 @@ const Header = () => {
               <div>
                 <button
                   onClick={toggleProgramMenu}
-                  className="mobile-nav-item w-full flex justify-between items-center px-4 py-3 rounded-xl text-base font-semibold text-color-gray-dark hover:text-color-dark-pink"
+                  className={`mobile-nav-item w-full flex justify-between items-center px-4 py-3 rounded-xl text-base font-semibold text-color-gray-dark hover:text-color-dark-pink 
+                    mobile-nav-item  ${
+                      currentPath === "/daycare"
+                      || currentPath === "/schooling"
+                      || currentPath === "/parenting-program"
+                      || currentPath === "/short-program"
+                        ? "text-color-dark-pink bg-pink-white"
+                        : "text-color-gray-dark hover:text-color-dark-pink"
+                    }`}
                 >
                   <span>
                     <i className="fas fa-graduation-cap mr-3"></i>Program

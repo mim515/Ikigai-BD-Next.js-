@@ -172,7 +172,7 @@ const Contact = () => {
             <div className="glass p-8 rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-300 ease-in-out transform hover:-translate-y-0.5">
               <h3 className="heading-blue">
                 Opening Hours
-                <span className="text-base font-medium color-pink-300-50">
+                <span className="ml-2 text-base font-medium color-dark-pink">
                   (All Branches)
                 </span>
               </h3>
@@ -211,10 +211,11 @@ const Contact = () => {
             <div className="glass p-8 rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-300 ease-in-out transform hover:-translate-y-0.5">
               <h3 className="heading-blue">
                 Mohammadpur Branch
-              </h3>
-              <p className="text-sm font-semibold color-dark-pink mb-6">
+                <span className="ml-2 text-sm font-semibold color-dark-pink mb-6">
                 (Head Office)
-              </p>
+              </span>
+              </h3>
+              
               <address className="space-y-4  not-italic color-blue-h1">
                 <div className="flex items-start group">
                   <div className="color-dark-pink bg-pink-300-50 rounded-full p-2.5 mr-4 mt-0.5 group-hover:bg-blue-200 transition-colors duration-300 shrink-0">

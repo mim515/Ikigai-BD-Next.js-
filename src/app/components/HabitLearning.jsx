@@ -94,14 +94,14 @@ const HabitLearning = () => {
       <div className="secondary-container">
 
         {/* Header Section */}
-        <header className="text-center mb-16">
-          <h1 className="text-4xl sm:text-5xl font-extrabold heading-blue mb-4 ">
+        <div className="secondary-heading">
+          <h2 className=" ">
             Habit Learning Program
-          </h1>
-          <p className="para">
+          </h2>
+          <p className="">
             We believe good habits build great lives. Our program nurtures essential routines for a balanced life.
           </p>
-        </header>
+        </div>
 
         {/* Cards Grid Section */}
         <section className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3 xl:gap-12">
