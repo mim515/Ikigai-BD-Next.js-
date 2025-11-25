@@ -1,6 +1,6 @@
 # IKIGAI BD – Official Website  
 ## 🌐 Live Link  
-## https://ikigaibd.com
+Visit the live site here: (**https://ikigaibd.com**)
 Modern corporate website for **Ikigai Corporation**, built for product showcasing, service presentation, and client interaction.
 
 ## 🚀 Tech Stack  
