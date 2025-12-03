@@ -17,9 +17,9 @@ export default function SubscriptionForm() {
   };
 
   return (
-    <section className="pb-[100px]">
-      <div className="secondary-container">
-        <div className="bg-white-50 p-8 sm:p-12 rounded-2xl shadow-2xl  text-center  transition duration-300 hover:-translate-y-2 hover:shadow-[0_10px_20px_-5px_rgb(0_0_0/0.08),_0_4px_10px_-4px_rgb(0_0_0/0.05)] ">
+    <section className="section-padding">
+      <div className="section-container">
+        <div className="bg-white-50 card-padding rounded-2xl shadow-2xl  text-center  transition duration-300 hover:-translate-y-2 hover:shadow-[0_10px_20px_-5px_rgb(0_0_0/0.08),_0_4px_10px_-4px_rgb(0_0_0/0.05)] ">
           
           <h2 className="text-xl md:text-3xl font-extrabold color-blue-h1 mb-4">
             Stay Connected 📬

@@ -7,7 +7,7 @@ const MobileMenuToggle = ({ isMenuOpen, openMobileMenu }) => {
     
     <button
       onClick={openMobileMenu}
-      className={`lg:hidden hamburger relative w-6 h-6 cursor-pointer transition-all duration-300 hover:scale-110 ${
+      className={`xl:hidden hamburger relative w-6 h-6 cursor-pointer transition-all duration-300 hover:scale-110 ${
         isMenuOpen ? "open" : ""
       }`}
       aria-controls="mobile-menu"

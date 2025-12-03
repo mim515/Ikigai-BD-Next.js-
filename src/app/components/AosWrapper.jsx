@@ -6,10 +6,11 @@ import "aos/dist/aos.css";
 export default function AOSWrapper({ children }) {
   useEffect(() => {
     AOS.init({
-      duration: 1200, // animation duration in ms
-      once: true,     // animation happens only once
-      mirror: false,  // animation repeats when scrolling up
+      duration: 1200, 
+      once: false,     
+      mirror: false,  
     });
+    AOS.refresh();
   }, []);
 
   return <>{children}</>;

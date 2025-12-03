@@ -2,7 +2,6 @@ import React from "react";
 import Image from "next/image";
 import CtaButton from "./Button";
 
-
 // Reusable Icon for the arrow
 const ArrowIcon = () => (
   <svg
@@ -31,36 +30,39 @@ const ActivityCard = ({
   description,
 }) => {
   return (
-    <div data-aos="fade-up" className="group transform cursor-pointer overflow-hidden activity-card">
+    <div
+      data-aos="fade-up"
+      className="group transform cursor-pointer overflow-hidden activity-card"
+    >
       <div className="overflow-hidden">
         <div className="group h-60 w-full overflow-hidden relative">
           <Image
-            src={image}
-            alt={title}
-            fill
+            src={image} // dynamic src variable
+            alt={title} // alt text
+            fill // covers the container
             className="object-cover transition-transform duration-500 group-hover:scale-110"
-            unoptimized={true}
+            placeholder="empty" // smooth blur placeholder for JPG/PNG
           />
         </div>
       </div>
-      <div className="p-6">
-        <div className="mb-4 flex items-center justify-between">
-          <span
-            className={`inline-block rounded-full px-3 py-1 text-xs font-semibold text-color-white  ${bgColor}`}
-          >
-            {category}
-          </span>
-          <span className="text-sm font-medium color-p-blue">{date}</span>
-        </div>
-        <h3 className="heading-blue">{title}</h3>
-        <p className="mb-6 color-p-blue">{description}</p>
-        <a
-          href="#"
-          className="font-semibold transition-colors duration-300 color-dark-purple"
-        >
-          Read More &rarr;
-        </a>
-      </div>
+      <div className="card-padding">
+  <div className="mb-4 flex items-center justify-between">
+    <span
+      className={`inline-block rounded-full px-3 py-1 text-xs font-semibold text-color-white  ${bgColor}`}
+    >
+      {category}
+    </span>
+    <span className="text-sm font-medium color-p-blue">{date}</span>
+  </div>
+  <h3 className="heading-blue ">{title}</h3>
+  <p className="mb-6 color-p-blue">{description}</p>
+  <a
+    href="#"
+    className="font-semibold transition-colors duration-300 color-dark-purple"
+  >
+    Read More &rarr;
+  </a>
+</div>
     </div>
   );
 };
@@ -107,11 +109,14 @@ const HomeActivity = () => {
         {/* Section Header */}
         <div data-aos="fade-up" className="section-heading">
           <h2>
-            <span>
-            Activities & Latest News
-            </span>
+            <span>Activities & Latest News</span>
           </h2>
-          <p>Discover the vibrant and enriching experiences that make every day at Ikigai joyful and educational. Stay updated with our latest activities, events, and stories that inspire curiosity and learning in young minds.</p>
+          <p>
+            Discover the vibrant and enriching experiences that make every day
+            at Ikigai joyful and educational. Stay updated with our latest
+            activities, events, and stories that inspire curiosity and learning
+            in young minds.
+          </p>
         </div>
 
         {/* Activities Grid */}
@@ -123,7 +128,13 @@ const HomeActivity = () => {
 
         {/* Call to Action Button */}
         <div className="text-center mt-10">
-          <a href="#" className="btn-neumorphic border-animated inline-flex items-center color-dark-pink">View More Events <i className="fa-solid fa-chevron-right color-dark-pink ml-3"></i></a>
+          <a
+            href="#"
+            className="btn-neumorphic border-animated inline-flex items-center color-dark-pink"
+          >
+            View More Events{" "}
+            <i className="fa-solid fa-chevron-right color-dark-pink ml-3"></i>
+          </a>
         </div>
       </div>
     </section>

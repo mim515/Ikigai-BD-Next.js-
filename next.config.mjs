@@ -1,9 +1,14 @@
-/** @type {import('next').NextConfig} */
 const nextConfig = {
-  output: 'export',
- images: {
-    domains: ["ikigaibd.com"], 
+  output: "export",
+  images: {
     unoptimized: true,
+    remotePatterns: [
+      {
+        protocol: "https",
+        hostname: "ikigaibd.com",
+        pathname: "/**",
+      },
+    ],
   },
 };
 

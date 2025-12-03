@@ -1,0 +1,67 @@
+[
+  {
+    "name": "Mori Mariko",
+    "title": "Chief Advisor",
+    "image": "/images/Advisors/Mori Mariko.svg",
+    "education": "Masters in Food & Nutrition, B.Ed",
+    "profession": "Sr. Teacher & Coordinator, Gazipur Cant. Public School & College",
+    "advisor": true,
+    "board": false
+    
+  },
+  {
+    "name": "Alhamra Parvin",
+    "title": "Academic Advisor",
+    "image": "/images/Advisors/Alhamra Parvin.svg",
+    "education": "Masters in Education, Dhaka University",
+    "profession": "Curriculum Specialist & Trainer",
+    "advisor": true,
+    "board": false
+  },
+  {
+    "name": "Dr. Sharmin Ali",
+    "title": "Medical Advisor",
+    "image": "/images/Advisors/Dr. Sharmin Ali.svg",
+    "education": "MBBS, FCPS (Pediatrics)",
+    "profession": "Consultant Pediatrician",
+    "advisor": true,
+    "board": false
+  },
+  {
+    "name": "Md. Jakaria Julfiquar",
+    "title": "CEO",
+    "image": "/images/Md. Jakaria Julfiquar.svg",
+    "education": "BBA, MBA",
+    "profession": "Former Head of Marketing, PRAN-RFL Group & CBO, Omni StrateG",
+    "specialization": "ECCD, Early Childhood & Ikigai Implication Specialist",
+    "advisor": false,
+    "board": true
+  },
+  {
+    "name": "Elora Parvin",
+    "title": "Managing Director",
+    "image": "/images/Elora Parvin.svg",
+    "education": "Masters in Management, CA (CC)",
+    "specialization": "ECCD, Early Childhood & Ikigai Implication Specialist",
+    "advisor": false,
+    "board": true
+  },
+  {
+    "name": "Dipa Rani Saha",
+    "title": "Director (Gulshan Branch)",
+    "image": "/images/Dipa Rani Saha.svg",
+    "education": "Master’s in Finance",
+    "specialization": "ECCD specialist",
+    "advisor": false,
+    "board": true
+  },
+  {
+    "name": "Shahinoor Zeenia",
+    "title": "Director, Operation",
+    "image": "/images/Shahinoor Zeenia.svg",
+    "education": "Masters in Arts",
+    "specialization": "ECCD & Day Care Specialist",
+    "advisor": false,
+    "board": true
+  }
+]

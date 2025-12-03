@@ -1,6 +1,5 @@
 import React from 'react';
 
-// Data for the three preschool stages
 const stages = [
   {
     name: "Pre-Play",
@@ -37,9 +36,8 @@ const stages = [
   }
 ];
 
-// Component for the schedule table rows
+
 const ScheduleRow = ({ group, morning, day }) => (
-  // Ensured text color is dark on the white background
   <tr className="text-gray-700 border-t border-gray-100">
     <td className="py-2 pr-4 font-semibold">{group}</td>
     <td className="py-2 pr-4">{morning}</td>
@@ -55,7 +53,7 @@ const StageCard = ({ stage }) => {
   return (
     <div className="activity-card bg-white-50 border-animated">
       {/* Inner card: Added 'relative' and 'z-10' to ensure it sits on top of the gradient wrapper */}
-      <div className="bg-white rounded-[calc(1.5rem-1px)] p-6 md:p-8 flex flex-col h-full z-10 relative">
+      <div className="bg-white rounded-[calc(1.5rem-1px)] card-padding flex flex-col h-full z-10 relative">
         {/* Stage Header - Using a solid color defined in the stage data */}
         <div className={`text-lg font-extrabold pb-2 ${stage.headerColor}`}>
           {stage.name}

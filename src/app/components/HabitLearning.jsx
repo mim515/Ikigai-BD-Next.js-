@@ -52,7 +52,7 @@ const HabitCard = ({ title, description, Icon, accent }) => {
                       blur-lg bg-gradient-to-r ${accent}`}></div>
 
       {/* Main Card Content */}
-      <div className={`relative p-8 h-full bg-white-50 rounded-3xl shadow-2xl
+      <div className={`relative card-padding h-full bg-white-50 rounded-3xl shadow-2xl
                       transform transition-all duration-500 ease-out 
                       group-hover:-translate-y-2 group-hover:shadow-3xl
                       group-hover:rotate-1`} // Subtle 3D tilt/lift on hover
@@ -90,8 +90,8 @@ const HabitCard = ({ title, description, Icon, accent }) => {
 // Main App Component
 const HabitLearning = () => {
   return (
-    <div className="section-padding">
-      <div className="secondary-container">
+    <div className="section-padding bg-white-50">
+      <div className="section-container">
 
         {/* Header Section */}
         <div className="secondary-heading">

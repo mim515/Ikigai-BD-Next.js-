@@ -4,8 +4,10 @@ import { useState, useEffect } from "react";
 import Image from "next/image";
 import MobileMenuToggle from "./Menu";
 import CtaButton from "../Button";
-import { usePathname } from "next/navigation"; // <-- ADDED: Next.js path hook
+import { usePathname } from "next/navigation";
 
+const TRANSPARENT_BLUR_DATA =
+  "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII=";
 const updateHeaderHeight = () => {
   const header = document.getElementById("main-header");
   const nav = document.getElementById("main-nav");
@@ -165,7 +167,7 @@ const Header = () => {
       {/* HEADER SECTION */}
       <header
         id="main-header"
-        className={`fixed top-0 left-0 right-0 z-50 ${
+        className={`fixed top-0 left-0 right-0 z-1000 ${
           typeof document !== "undefined" &&
           document.getElementById("main-header")?.classList.contains("nav-only")
             ? "mt-2 md:mt-0"
@@ -255,15 +257,18 @@ const Header = () => {
                 <div className="relative h-15 w-60 mt-[5px] md:h-13 md:w-50  xl:h-15 xl:w-70 xl:mt-[5px] flex items-center justify-center transition-all duration-150 group-hover:scale-105">
                   <Image
                     src="/images/ikigai.svg"
-                    alt="Ikigai daycare and preschool"
-                    fill
+                    alt="Ikigai daycare and preschool logo"
+                    fill={true}
                     className="object-contain"
+                    sizes="200px"
+                    placeholder="blur"
+                    blurDataURL={TRANSPARENT_BLUR_DATA}
                   />
                 </div>
               </Link>
 
               {/* Desktop Navigation Links */}
-              <div className="hidden lg:flex items-center space-x-8">
+              <div className="hidden xl:flex items-center space-x-8">
                 {/* Home Link */}
                 <Link
                   href="/" // CHANGED: Link to root path
@@ -286,15 +291,18 @@ const Header = () => {
                   About Us
                 </Link>
                 {/* Program Dropdown (Stays as smooth scroll) */}
-                <div className={`dropdown relative group z-[2000] nav-link 
+                <div
+                  className={`dropdown relative group z-[2000] nav-link 
                 ${
-                        currentPath === "/daycare"
-                        || currentPath === "/schooling" 
-                        || currentPath === "/parenting-program" 
-                        || currentPath === "/short-program"
-                        ? "active" : ""
+                  currentPath === "/daycare" ||
+                  currentPath === "/schooling" ||
+                  currentPath === "/parenting-program" ||
+                  currentPath === "/short-program"
+                    ? "active"
+                    : ""
                 }
-                 flex items-center px-5 py-0 text-color-dark-pink hover:bg-pink-white transition-all duration-300 rounded-xl m-2`}>
+                 flex items-center mr-8 py-0 text-color-dark-pink hover:bg-pink-white transition-all duration-300 rounded-xl m-2`}
+                >
                   <button
                     className="flex items-center cursor-pointer"
                     aria-haspopup="true"
@@ -336,8 +344,7 @@ const Header = () => {
                         currentPath === "/short-program" ? "active" : ""
                       } flex items-center px-5 py-3  hover:bg-pink-white transition-all duration-300 rounded-xl m-2`}
                     >
-                      <i className="fas fa-clock mr-3 "></i>Short
-                      Program
+                      <i className="fas fa-clock mr-3 "></i>Short Program
                     </Link>
                   </div>
                 </div>
@@ -360,31 +367,75 @@ const Header = () => {
                   Articles
                 </Link>
 
+                
+                {/* Activity Dropdown (Stays as smooth scroll) */}
+                <div
+                  className={`dropdown relative group z-[2000] nav-link 
+                ${
+                  currentPath === "/photos" ||
+                  currentPath === "/videos"
+                    ? "active"
+                    : ""
+                }
+                 flex items-center mr-8 py-0 text-color-dark-pink hover:bg-pink-white transition-all duration-300 rounded-xl m-2`}
+                >
+                  <button
+                    className="flex items-center cursor-pointer"
+                    aria-haspopup="true"
+                  >
+                    Activity
+                    <i className="fas fa-chevron-down ml-2 text-xs transition-transform duration-300 group-hover:rotate-180"></i>
+                  </button>
+                  <div className="dropdown-menu absolute top-full left-0 mt-3 min-w-[220px] frosted-card">
+                    <Link
+                      href="/photos" // Adjusted for clarity: Page / then hash #programs
+                      className={`nav-link ${
+                        currentPath === "/photos" ? "active" : ""
+                      } flex items-center px-5 py-3 text-color-dark-pink hover:bg-pink-white transition-all duration-300 rounded-xl m-2`}
+                    >
+                      <i className="fa-solid fa-photo-film mr-3 "></i>
+                      
+                      Photos
+                    </Link>
+                    <Link
+                      href="/videos"
+                      className={`nav-link ${
+                        currentPath === "/videos" ? "active" : ""
+                      } flex items-center px-5 py-3 text-color-dark-pink hover:bg-pink-white transition-all duration-300 rounded-xl m-2`}
+                    >
+                      <i className="fa-solid fa-video mr-3 "></i>
+                      
+                      Videos
+                    </Link>
+                  </div>
+                </div>
+
                 <Link
                   href="/activities"
                   className={`nav-link ${
                     currentPath === "/activities" ? "active" : ""
                   }`}
                 >
-                  Activity
+                  Event
                 </Link>
+
+
               </div>
 
               {/* CTA and Mobile Menu Button */}
               <div className="flex items-center space-x-4 ">
                 {/* Replaced CTA with the reusable component */}
-                <div className="hidden sm:block ">
-                  <CtaButton
-                    handleSmoothScroll={handleSmoothScroll}
-                    className="cta-button inline-block"
+                <div className="hidden md:block ">
+                  <Link href="/admission"><CtaButton
+                    className={`cta-button inline-block nav-link  hover:cursor-pointer`}
                   >
                     {" "}
                      Admissions{" "}
-                  </CtaButton>
+                  </CtaButton></Link>
                 </div>
 
                 {/* Replaced Hamburger with the reusable component */}
-                <MobileMenuToggle
+                <MobileMenuToggle 
                   isMenuOpen={isMenuOpen}
                   openMobileMenu={openMobileMenu}
                 />
@@ -401,7 +452,7 @@ const Header = () => {
 
       {/* Mobile Menu */}
       <div
-        className={`fixed inset-0 z-[60] mobile-menu-container transition-all duration-500 ease-out ${
+        className={`fixed inset-0 z-[2000] mobile-menu-container transition-all duration-500 ease-out ${
           isMenuOpen || isMenuAnimating
             ? "opacity-100 visible"
             : "opacity-0 invisible pointer-events-none"
@@ -425,17 +476,17 @@ const Header = () => {
               : "translate-x-full opacity-0 scale-95"
           } bg-gradient-to-b from-white/95 to-white/90 backdrop-blur-xl shadow-2xl border-l border-light`}
         >
-          <div className="h-full flex flex-col">
+          <div className="h-full  flex flex-col color-blue-menu">
             <div className="flex justify-between items-center p-6 border-b border-light">
-              <h2 className="font-bold text-xl text-color-gray-dark">Menu</h2>
+              <h2 className="font-bold color-blue-menu text-xl text-color-gray-dark">Menu</h2>
               <button
                 onClick={closeMobileMenu}
                 className="p-2 rounded-full text-color-gray-light hover:text-color-dark-pink hover:bg-pink-white transition-colors"
               >
-                <i className="fas fa-times text-xl"></i>
+                <i className="fas fa-times color-blue-menu text-xl"></i>
               </button>
             </div>
-            <div className="flex-grow p-4 space-y-2 overflow-y-auto">
+            <div className="flex-grow p-4 ">
               {/* Mobile Home Link */}
               <Link
                 href="/" // CHANGED: Link to root path
@@ -446,7 +497,7 @@ const Header = () => {
                   closeMobileMenu();
                 }}
                 // DYNAMIC ACTIVE CLASS FOR MOBILE
-                className={`mobile-nav-item block px-4 py-3 rounded-xl text-base font-semibold ${
+                className={`mobile-nav-item mb-2 block px-4 py-3 rounded-xl text-base font-semibold ${
                   currentPath === "/"
                     ? "text-color-dark-pink bg-pink-white"
                     : "text-color-gray-dark hover:text-color-dark-pink"
@@ -464,7 +515,7 @@ const Header = () => {
                   closeMobileMenu();
                 }}
                 // DYNAMIC ACTIVE CLASS FOR MOBILE
-                className={`mobile-nav-item block px-4 py-3 rounded-xl text-base font-semibold ${
+                className={`mobile-nav-item mb-2 block px-4 py-3 rounded-xl text-base font-semibold ${
                   currentPath === "/about-us"
                     ? "text-color-dark-pink bg-pink-white"
                     : "text-color-gray-dark hover:text-color-dark-pink"
@@ -477,10 +528,10 @@ const Header = () => {
                   onClick={toggleProgramMenu}
                   className={`mobile-nav-item w-full flex justify-between items-center px-4 py-3 rounded-xl text-base font-semibold text-color-gray-dark hover:text-color-dark-pink 
                     mobile-nav-item  ${
-                      currentPath === "/daycare"
-                      || currentPath === "/schooling"
-                      || currentPath === "/parenting-program"
-                      || currentPath === "/short-program"
+                      currentPath === "/daycare" ||
+                      currentPath === "/schooling" ||
+                      currentPath === "/parenting-program" ||
+                      currentPath === "/short-program"
                         ? "text-color-dark-pink bg-pink-white"
                         : "text-color-gray-dark hover:text-color-dark-pink"
                     }`}
@@ -508,7 +559,7 @@ const Header = () => {
                       }
                       closeMobileMenu();
                     }}
-                    className={`mobile-nav-item block px-4 py-3 rounded-xl text-base font-semibold ${
+                    className={`mobile-nav-item mb-2 block px-4 py-3 rounded-xl text-base font-semibold ${
                       currentPath === "/daycare"
                         ? "text-color-dark-pink bg-pink-white"
                         : "text-color-gray-dark hover:text-color-dark-pink"
@@ -526,7 +577,7 @@ const Header = () => {
                       }
                       closeMobileMenu();
                     }}
-                    className={`mobile-nav-item block px-4 py-3 rounded-xl text-base font-semibold ${
+                    className={`mobile-nav-item mb-2 block px-4 py-3 rounded-xl text-base font-semibold ${
                       currentPath === "/schooling"
                         ? "text-color-dark-pink bg-pink-white"
                         : "text-color-gray-dark hover:text-color-dark-pink"
@@ -543,7 +594,7 @@ const Header = () => {
                       }
                       closeMobileMenu();
                     }}
-                    className={`mobile-nav-item block px-4 py-3 rounded-xl text-base font-semibold ${
+                    className={`mobile-nav-item mb-2 block px-4 py-3 rounded-xl text-base font-semibold ${
                       currentPath === "/parenting-program"
                         ? "text-color-dark-pink bg-pink-white"
                         : "text-color-gray-dark hover:text-color-dark-pink"
@@ -559,7 +610,7 @@ const Header = () => {
                       }
                       closeMobileMenu();
                     }}
-                    className={`mobile-nav-item block px-4 py-3 rounded-xl text-base font-semibold ${
+                    className={`mobile-nav-item mb-2 block px-4 py-3 rounded-xl text-base font-semibold ${
                       currentPath === "/short-program"
                         ? "text-color-dark-pink bg-pink-white"
                         : "text-color-gray-dark hover:text-color-dark-pink"
@@ -579,7 +630,7 @@ const Header = () => {
                   closeMobileMenu();
                 }}
                 // DYNAMIC ACTIVE CLASS FOR MOBILE
-                className={`mobile-nav-item block px-4 py-3 rounded-xl text-base font-semibold ${
+                className={`mobile-nav-item mb-2 block px-4 py-3 rounded-xl text-base font-semibold ${
                   currentPath === "/curriculum"
                     ? "text-color-dark-pink bg-pink-white"
                     : "text-color-gray-dark hover:text-color-dark-pink"
@@ -593,7 +644,7 @@ const Header = () => {
                 onClick={() => {
                   closeMobileMenu();
                 }}
-                className={`mobile-nav-item block px-4 py-3 rounded-xl text-base font-semibold ${
+                className={`mobile-nav-item mb-2 block px-4 py-3 rounded-xl text-base font-semibold ${
                   currentPath === "/articles"
                     ? "text-color-dark-pink bg-pink-white"
                     : "text-color-gray-dark hover:text-color-dark-pink"
@@ -602,7 +653,76 @@ const Header = () => {
                 <i className="fas fa-newspaper mr-3"></i>Articles
               </Link>
 
-              <Link
+             
+
+                {/* Acitivity dropdown for mobile starts */}
+                 <div>
+                <button
+                  onClick={toggleProgramMenu}
+                  className={`mobile-nav-item mb-2 w-full flex justify-between items-center px-4 py-3 rounded-xl text-base font-semibold text-color-gray-dark hover:text-color-dark-pink 
+                    mobile-nav-item  ${
+                      currentPath === "/photos" ||
+                      currentPath === "/videos"
+                        ? "text-color-dark-pink bg-pink-white"
+                        : "text-color-gray-dark hover:text-color-dark-pink"
+                    }`}
+                >
+                  <span>
+                    <i className="fas fa-graduation-cap mr-3"></i>Activity
+                  </span>
+                  <i
+                    className={`fas fa-chevron-down text-xs transition-transform duration-300 ${
+                      isProgramMenuOpen ? "rotate-180" : ""
+                    }`}
+                  ></i>
+                </button>
+                <div
+                  className={`${
+                    isProgramMenuOpen ? "block" : "hidden"
+                  } pl-8 mt-2 space-y-2`}
+                >
+                  {/* Program Sub-links (Use smooth scroll) */}
+                  <Link
+                    href="/photos"
+                    onClick={(e) => {
+                      if (currentPath === "/photos") {
+                        handleSmoothScroll(e, "/photos"); // Smooth scroll if on home page
+                      }
+                      closeMobileMenu();
+                    }}
+                    className={`mobile-nav-item mb-2 block px-4 py-3 rounded-xl text-base font-semibold ${
+                      currentPath === "/photos"
+                        ? "text-color-dark-pink bg-pink-white"
+                        : "text-color-gray-dark hover:text-color-dark-pink"
+                    }`}
+                    // className="block px-4 py-2 rounded-xl text-sm font-medium text-color-gray-light  hover:text-color-dark-pink hover:bg-pink-white transition-colors"
+                  >
+                    <i className="fa-solid fa-photo-film mr-3 text-color-dark-pink"></i>
+                   
+                    Photos
+                  </Link>
+                  <Link
+                    href="/videos"
+                    onClick={(e) => {
+                      if (currentPath === "/videos") {
+                        handleSmoothScroll(e, "/videos"); // Smooth scroll if on home page
+                      }
+                      closeMobileMenu();
+                    }}
+                    className={`mobile-nav-item mb-2 block px-4 py-3 rounded-xl text-base font-semibold ${
+                      currentPath === "/videos"
+                        ? "text-color-dark-pink bg-pink-white"
+                        : "text-color-gray-dark hover:text-color-dark-pink"
+                    }`}
+                  >
+                    <i className="fa-solid fa-video mr-3 bg-color-dark-purple"></i>
+                    Videos
+                  </Link>
+                </div>
+              </div>
+                {/* Acitivity dropdown for mobile ends */}
+
+                 <Link
                 href="/activities"
                 onClick={() => {
                   closeMobileMenu();
@@ -613,21 +733,24 @@ const Header = () => {
                     : "text-color-gray-dark hover:text-color-dark-pink"
                 }`}
               >
-                <i className="fas fa-play mr-3"></i>Activity
+                <i className="fas fa-play mr-3"></i>Event
               </Link>
+
+
             </div>
             <div className="p-6 border-t border-light">
               {/* Replaced CTA with the reusable component */}
-              <CtaButton
-                handleSmoothScroll={(e) => {
-                  handleSmoothScroll(e, "#contact");
+              <Link href="/admission">
+                <CtaButton
+                onClick={() => {
                   closeMobileMenu();
                 }}
-                className="w-full text-center block cta-button "
+                className={`w-full text-center block cta-button `}
               >
                 {" "}
                 Admissions{" "}
               </CtaButton>
+              </Link>
             </div>
           </div>
         </div>

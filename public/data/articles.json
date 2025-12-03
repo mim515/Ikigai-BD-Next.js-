@@ -1,0 +1,52 @@
+{
+  "featuredArticle": {
+    "category": "CHILD DEVELOPMENT",
+    "title": "Finding Your Child's 'Ikigai': The Power of Purposeful Play",
+    "description": "Discover how play is more than just fun. It's how children find their purpose, develop skills, and understand the world. Learn how to create an environment that nurtures their inner 'Ikigai'.",
+    "imageAlt": "Child playing with colorful blocks",
+    "linkText": "Read Full Article",
+    "imageUrl": "/images/article01.jpg"
+  },
+  "latestArticles": [
+    {
+      "category": "MODERN PARENTING",
+      "title": "Navigating the Digital Playground: A Mindful Approach",
+      "author": "Ikigai Educators",
+      "date": "July 10, 2025",
+      "description": "In a world full of screens, how do we ensure healthy digital habits? This article offers practical tips for setting boundaries and using technology to support creativity.",
+      "imageAlt": "Child reacting to a smartphone, representing digital engagement",
+      "linkText": "Read More",
+      "imageUrl": "/images/article02.jpg"
+    },
+    {
+      "category": "OUR CURRICULUM",
+      "title": "Why a Blended Curriculum? The Magic of Montessori & Cambridge",
+      "author": "Ikigai Educators",
+      "date": "June 28, 2025",
+      "description": "Go deeper into our unique learning model. Understand how combining child-led exploration with structured outcomes prepares your child for a life of curiosity and confidence.",
+      "imageAlt": "Bright and organized classroom environment",
+      "linkText": "Read More",
+      "imageUrl": "/images/article03.jpg"
+    },
+    {
+      "category": "PARENTING TIPS",
+      "title": "Building Resilience in Young Children: Everyday Strategies",
+      "author": "Ikigai Educators",
+      "date": "June 15, 2025",
+      "description": "Discover practical ways to foster resilience and emotional strength in your child, preparing them for life's challenges with a positive mindset.",
+      "imageAlt": "Two young children huddled together, looking thoughtful",
+      "linkText": "Read More",
+      "imageUrl": "/images/article04.jpg"
+    },
+    {
+      "category": "OUTDOOR LEARNING",
+      "title": "The Benefits of Outdoor Play: Beyond the Classroom Walls",
+      "author": "Ikigai Educators",
+      "date": "May 20, 2025",
+      "description": "Explore how connecting with nature through outdoor play enhances physical development, problem-solving skills, and a child's overall well-being.",
+      "imageAlt": "Children playing with cardboard boxes outdoors",
+      "linkText": "Read More",
+      "imageUrl": "/images/article05.jpg"
+    }
+  ]
+}

@@ -59,7 +59,7 @@ const LearningModel = () => {
         {/* Core Blend: Montessori & Cambridge Cards */}
         <div className="mx-auto grid max-w-6xl grid-cols-1 gap-12 md:grid-cols-2">
           {/* Montessori Card */}
-          <div data-aos="fade-right"  className="transform  neumorphic-card">
+          <div data-aos="fade-right"  className="transform  neumorphic-card card-padding">
             <div className="mb-6 flex items-center">
               <div className="mr-5 flex h-16 w-16 items-center justify-center neumorphic-gradient-card">
                 <FaRegHandshake size={32} className="color-dark-pink" />
@@ -90,7 +90,7 @@ const LearningModel = () => {
           </div>
 
           {/* Cambridge Card */}
-          <div data-aos="fade-left"  className="transform neumorphic-card">
+          <div data-aos="fade-left"  className="transform neumorphic-card card-padding">
             <div className="mb-6 flex items-center">
               <div className="mr-5 flex h-16 w-16 items-center justify-center rounded-2xl neumorphic-gradient-indigo">
                 <FaBookOpen size={32} className="color-dark-purple "/>
@@ -119,7 +119,7 @@ const LearningModel = () => {
         </div>
 
         {/* Localization Section */}
-        <div data-aos="fade-up"  className="relative mt-18 neumorphic-gradient-card-green">
+        <div data-aos="fade-up"  className="relative mt-18 neumorphic-gradient-card-green card-padding">
           <h3 className="flex items-center justify-center heading-blue">
             <span className="ml-3 mt-2 text-2xl md:text-3xl"><i className="fa-solid fa-flag mr-3"></i></span>
            Localization for Bangladesh
@@ -130,7 +130,7 @@ const LearningModel = () => {
           <div className="mt-8 justify-center  grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3">
             <div className="p-1 rounded-2xl overflow-hidden relative">
               <div
-                className=" neumorphic-card overflow-hidden "
+                className="card-padding neumorphic-card overflow-hidden "
                 style={{ boxShadow: "none" }}
               >
                 <div className=" border-animation ">
@@ -145,7 +145,7 @@ const LearningModel = () => {
             </div>
             <div className="p-1 rounded-2xl overflow-hidden relative">
               <div
-                className="neumorphic-card overflow-hiddenn"
+                className="neumorphic-card card-padding overflow-hiddenn"
                 style={{ boxShadow: "none" }}
               >
                 <div className="border-animation ">
@@ -162,10 +162,10 @@ const LearningModel = () => {
             <div>
               <div className="p-1 rounded-2xl overflow-hidden relative">
                 <div
-                  className="neumorphic-card overflow-hiddenn"
+                  className="neumorphic-card card-padding overflow-hiddenn"
                   style={{ boxShadow: "none" }}
                 >
-                  <div className="border-animation ">
+                  <div className="border-animation">
                     <h5 className="text-lg font-bold color-blue-light">
                       Bilingual Support
                     </h5>

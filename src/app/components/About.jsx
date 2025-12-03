@@ -1,11 +1,14 @@
 import React from "react";
 import Image from "next/image";
 
+const TEST_BLUR_DATA_URL =
+  "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mP8z8BQDwAEhQGAhKmMIwAAAABJRU5ErkJggg==";
+
 const About = () => {
   return (
     <>
-      
-      <section  data-aos="fade-up"
+      <section
+        data-aos="fade-up"
         id="about"
         className="relative overflow-hidden section-padding"
       >
@@ -20,21 +23,33 @@ const About = () => {
 
         <div className=" relative section-container">
           <div className="section-heading">
-                <h2>
-                  <span className="">Our Philosophy: Finding Joy in Growth</span>
-                </h2>
-                <p>At Ikigai, we believe every child is unique and full of potential. Our mission is to provide a foundation for lifelong learning and well-being.</p>
-              </div>
-          <div data-aos="fade-up" className="grid items-center gap-16 lg:grid-cols-2">
+            <h2>
+              <span className="">Our Philosophy: Finding Joy in Growth</span>
+            </h2>
+            <p>
+              At Ikigai, we believe every child is unique and full of potential.
+              Our mission is to provide a foundation for lifelong learning and
+              well-being.
+            </p>
+          </div>
+          <div
+            data-aos="fade-up"
+            className="grid items-center gap-16 lg:grid-cols-2"
+          >
             <div className="relative">
-              <div className="relative rounded-3xl neumorphic-card">
-               <Image src="/images/about us.svg" alt="Caring teachers with children" width={1200} height={800} priority />
+              <div className="card-padding relative neumorphic-card">
+                <Image className="rounded-[11px] md:rounded-[16px]"
+                  src="/images/about us.svg"
+                  alt="Caring teachers  reading a book to three children in a bright classroom"
+                  width={900}
+                  height={600}
+                  priority={true}
+                  style={{ objectFit: "contain" }}
+                />
               </div>
             </div>
             <div>
-              <h3 className="heading-blue">
-                Our Mission & Values
-              </h3>
+              <h3 className="heading-blue">Our Mission & Values</h3>
               <p className="mb-8 leading-relaxed  para">
                 To cultivate a vibrant, inclusive community where children are
                 empowered to explore, create, and develop a deep love for
@@ -42,12 +57,11 @@ const About = () => {
                 them towards discovering their 'ikigai' – their reason for joy
                 and purpose.
               </p>
-              
 
               <ul className="space-y-4 text-slate-700">
                 <li className="flex items-start">
                   <div className="mr-4 mt-1 flex h-8 w-8 flex-shrink-0 items-center justify-center neumorphic-inset">
-                   <i className="fa-regular fa-heart  text-lg mt-1 color-dark-pink"></i> 
+                    <i className="fa-regular fa-heart  text-lg mt-1 color-dark-pink"></i>
                   </div>
                   <span>
                     <strong>Care & Compassion:</strong> Providing a safe,

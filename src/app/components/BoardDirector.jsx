@@ -1,118 +1,155 @@
-// components/TeamSection.jsx
-'use client';
+"use client";
 
-import React from 'react';
-import Image from 'next/image';
+import React, { useEffect, useState } from "react";
+import Image from "next/image";
 
-// --- 1. Team Data ---
-const teamMembers = [
-  {
-      name: "Md. Jakaria Julfiquar",
-      title: "CEO",
-      image: "/images/Md. Jakaria Julfiquar.svg", // Placeholder image path
-      education: "BBA, MBA",
-      profession: "Former Head of Marketing, PRAN-RFL Group & CBO, Omni StrateG",
-      specialization: "ECCD, Early Childhood & Ikigai Implication Specialist",
-    },
-    {
-      name: "Elora Parvin",
-      title: "Managing Director",
-      image: "/images/Elora Parvin.svg", // Placeholder image path
-      education: "Masters in Management, CA (CC)",
-      profession: null, // No explicit profession listed; can be left null or removed
-      specialization: "ECCD, Early Childhood & Ikigai Implication Specialist",
-    },
-    {
-      name: "Dipa Rani Saha",
-      title: "Director (Gulshan Branch)",
-      image: "/images/Dipa Rani Saha.svg", // Placeholder image path
-      education: "Master’s in Finance",
-      profession: null,
-      specialization: "ECCD specialist",
-    },
-    
-    {
-      name: "Shahinoor Zeenia",
-      title: "Director, Operation",
-      image: "/images/Shahinoor Zeenia.svg", // Placeholder image path
-      education: "Masters in Arts",
-      profession: null,
-      specialization: "ECCD & Day Care Specialist",
-    },
-];
-
-// --- 2. Team Card Component ---
-const TeamCard = ({ member }) => {
-  const isSvg = member.image.toLowerCase().endsWith(".svg");
-
+// --- 1. Team Card Component ---
+const TeamCard = ({ member, onClick }) => {
   return (
-    <div className="group bg-white-50 relative overflow-hidden rounded-2xl shadow-lg transition-all duration-300 hover:shadow-2xl hover:scale-[1.01]">
-
+    <div
+      onClick={() => onClick(member)}
+      className="group relative cursor-pointer overflow-hidden rounded-2xl shadow-lg transition-all duration-300 hover:shadow-2xl"
+    >
       {/* Image Container */}
-      <div className="relative h-85 w-full">
+      <div className="relative w-full h-80">
         <Image
           src={member.image}
           alt={member.name}
           fill
-          unoptimized={true} 
-          className="w-full h-full object-cover object-top transition-transform duration-500 group-hover:scale-105"
-          priority
+          unoptimized={member.image.endsWith(".svg")}
+          sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+          placeholder={member.image.endsWith(".svg") ? undefined : "blur"}
+          className="object-cover object-top"
         />
 
-        {/* Hover Overlay (Same design — fixed bg color) */}
-        {/* <div
-          className="   
-            absolute inset-0 
-            flex flex-col justify-end 
-            text-left 
-            bg-blue-300/50 
-            translate-y-full group-hover:translate-y-0 group-hover:rounded-2xl group-hover:m-2 group-hover:mt-4
-            transition-transform duration-500 ease-in-out 
-            px-4 py-6
-            z-10
+        {/* Hover Overlay */}
+        <div
+          className="
+            absolute bottom-0 left-0 w-full py-5
+            translate-y-full group-hover:translate-y-0
+            transition-transform duration-500 ease-in-out
+            bg-white/50 backdrop-blur-md
+            px-4 py-4 
+            flex flex-col justify-end
+            z-[50]
           "
         >
-          <p className="text-base font-semibold mb-1">Education</p>
-          <p className="text-sm mb-4">{member.education}</p>
+          <p className="color-dark-purple font-semibold">Education</p>
+          <p className="text-sm color-gray-dark mb-3">{member.education}</p>
 
-          <p className="text-base font-semibold mb-1">Profession</p>
-          <p className="text-sm">{member.profession}</p>
-        </div> */}
+          <p className="color-dark-purple font-semibold">Specialization</p>
+          <p className="color-gray-dark text-sm">{member.specialization}</p>
+        </div>
       </div>
 
       {/* Text */}
-      <div className="p-4 text-center">
-        <h3 className="text-lg font-semibold">{member.name}</h3>
-        <p className="text-sm">{member.title}</p>
+      <div className="p-4 text-center relative z-[100] bg-[#C9D1F7]">
+        <h3 className="text-lg font-semibold color-blue-h1">{member.name}</h3>
+        <p className="para text-sm">{member.title}</p>
       </div>
     </div>
   );
 };
 
-// --- 3. Main Component ---
+// --- 2. Advisors Main Component ---
 const Advisors = () => {
-  return (
-    <section className="section-padding">
-      <div className="section-container">
+  const [advisors, setAdvisors] = useState([]);
+  const [selectedAdvisor, setSelectedAdvisor] = useState(null);
 
+  useEffect(() => {
+    const fetchAdvisors = async () => {
+      try {
+        const res = await fetch("/data/member.json");
+        const data = await res.json();
+
+        const filtered = data.filter((item) => item.board === true);
+        setAdvisors(filtered);
+      } catch (error) {
+        console.error("Error fetching advisors:", error);
+      }
+    };
+
+    fetchAdvisors();
+  }, []);
+
+  const closeModal = () => setSelectedAdvisor(null);
+
+  return (
+    <section className="section-padding ">
+      <div className="section-container">
         {/* Section Heading */}
         <div className="secondary-heading">
-          <h2 className=''>
+          <h2>
             <span>Board of Directors</span>
           </h2>
-          <p className=''>
+          <p>
             Providing strategic leadership to ensure every decision aligns with our core values.
           </p>
         </div>
 
         {/* Team Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-          {teamMembers.map((member) => (
-            <TeamCard key={member.name} member={member} />
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6">
+          {advisors.map((member) => (
+            <TeamCard
+              key={member.name}
+              member={member}
+              onClick={setSelectedAdvisor}
+            />
           ))}
         </div>
-
       </div>
+
+      {/* Modal */}
+      {selectedAdvisor && (
+        <div
+          className="fixed inset-0 z-200 flex items-center justify-center bg-black/60 backdrop-blur-sm"
+          onClick={closeModal}
+        >
+          <div
+            className="neumorphic-gradient-card-green rounded-3xl card-padding   shadow-xl max-w-md w-full p-6 relative"
+            onClick={(e) => e.stopPropagation()}
+          >
+            <button
+              className="absolute top-3 right-3 text-gray-500 hover:text-gray-800 font-bold text-lg"
+              onClick={closeModal}
+            >
+              &times;
+            </button>
+
+            <div className="flex flex-col items-center">
+              <div className="relative w-32 h-32 mb-4 rounded-full overflow-hidden">
+                <Image
+                  src={selectedAdvisor.image}
+                  alt={selectedAdvisor.name}
+                  fill
+                  unoptimized={selectedAdvisor.image.endsWith(".svg")}
+                  className="object-cover"
+                />
+              </div>
+              <div className="text-left">
+
+                <div className="text-center">
+                  <h3 className="text-xl color-dark-pink font-semibold ">
+                    {selectedAdvisor.name}
+                  </h3>
+                  <div className="text-color-white bg-dark-purple px-4 py-1 max-w-[200px] mx-auto rounded-2xl mb-6">
+                    <p className="">{selectedAdvisor.title}</p>
+                  </div>
+                </div>
+              <p className="text-gray-700 mb-1 text-sm">
+                <strong>Education:</strong> {selectedAdvisor.education}
+              </p>
+              <p className="text-gray-700 mb-1 text-sm">
+                <strong>Specialization:</strong> {selectedAdvisor.specialization}
+              </p>
+              {selectedAdvisor.bio && (
+                <p className="text-gray-600 mt-2 text-sm">{selectedAdvisor.bio}</p>
+              )}
+              </div>
+            </div>
+          </div>
+        </div>
+      )}
     </section>
   );
 };

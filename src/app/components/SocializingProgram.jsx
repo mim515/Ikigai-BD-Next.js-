@@ -41,7 +41,7 @@ const socializationFeatures = [
 const FeatureItem = ({ title, description, Icon, color, bgColor }) => {
   return (
     // Note: Added group class to allow hover effects on children
-    <div className="group bg-white-50 flex items-start p-4 transition duration-300 transform hover:shadow-lg rounded-xl">
+    <div className="group bg-white-50 flex items-start card-padding transition duration-300 transform hover:shadow-lg rounded-xl">
       {/* Icon Circle */}
       <div className={`p-3 rounded-full ${bgColor} flex-shrink-0 mr-4`}>
         <Icon className={`w-6 h-6 ${color}`} />
@@ -62,7 +62,7 @@ const FeatureItem = ({ title, description, Icon, color, bgColor }) => {
 const SocializingProgram = () => {
   return (
     <div className=" section-padding">
-      <div className="secondary-container">
+      <div className="section-container">
         {/* Header Section */}
         <div className="secondary-heading">
           <h2 className="">Socialization Program</h2>
@@ -83,16 +83,18 @@ const SocializingProgram = () => {
 
           {/* Right Column: Image Card */}
           <div className="w-full relative">
-            <div className="bg-white-50 p-4 rounded-3xl shadow-xl overflow-hidden   group">
+            <div className="neumorphic-card items-center card-padding rounded-3xl shadow-xl overflow-hidden   group">
               {/* Container for the image, setting aspect ratio and handling hover scale */}
-              <div className="relative w-full h-auto aspect-[3/2] rounded-3xl overflow-hidden shadow-lg transition duration-500 group-hover:scale-[1.05]">
+              <div className="">
                 <Image
                   src="/images/daycare.jpg"
                   alt="Children participating in a socialization program activity"
-                  className="rounded-2xl object-cover"
                   width={600}
                   height={400}
-                  unoptimized={true} 
+                  className="rounded-[11px] md:rounded-[16px] w-full h-full object-cover"
+                  placeholder="blur"
+                  blurDataURL="/images/placeholder.jpg"
+                  sizes="(max-width: 768px) 100vw, 50vw"
                 />
               </div>
             </div>

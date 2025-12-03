@@ -1,7 +1,7 @@
 'use client';
 import React from 'react';
 import Image from 'next/image';
-import { Music, Smile, Compass, BookOpen, Feather, Zap, Check } from 'lucide-react'; // Added Check icon
+import { Music, Smile, Compass, BookOpen, Feather, Zap, Check } from 'lucide-react';
 
 // --- DATA DEFINITION ---
 const preplayImg = "/images/parenting-program03.jpg";
@@ -59,15 +59,7 @@ const CARD_DATA = [
 ];
 
 // ICON MAPPING
-const IconMap = {
-  Music,
-  Smile,
-  Compass,
-  BookOpen,
-  Feather,
-  Zap,
-  Check,
-};
+const IconMap = { Music, Smile, Compass, BookOpen, Feather, Zap, Check };
 
 // Feature Item Component
 const FeatureItem = ({ iconKey, title, description, color }) => {
@@ -75,28 +67,28 @@ const FeatureItem = ({ iconKey, title, description, color }) => {
   return (
     <div className="flex items-start space-x-4 mt-4">
       <div className={`p-3 rounded-full flex-shrink-0 ${color}`}>
-        <Icon className="w-3 h-3 md:w-5 md:h-5 text-color-white" />
+        <Icon className="w-3 h-3 md:w-5 md:h-5 text-white" />
       </div>
       <div>
-        <h4 className="font-semibold color-h1-blue text-lg">{title}</h4>
+        <h4 className="font-semibold text-blue-900 text-lg">{title}</h4>
         <p className="para">{description}</p>
       </div>
     </div>
   );
 };
 
-// Card Component (Hero Style with Checkmarks and Quote)
+// Card Component (Hero Style)
 const ProgramCardHeroStyle = ({ group, reverse }) => {
   const contentOrder = reverse ? 'lg:order-2' : 'lg:order-1';
   const blockOrder = reverse ? 'lg:order-1' : 'lg:order-2';
 
   return (
-    <div className="bg-white-50 p-2 md:p-6 rounded-3xl shadow-xl overflow-hidden mb-12 transition duration-300 hover:-translate-y-2 hover:shadow-[0_10px_20px_-5px_rgb(0_0_0/0.08),_0_4px_10px_-4px_rgb(0_0_0/0.05)]">
+    <div className="bg-white-50 card-padding rounded-3xl shadow-xl overflow-hidden mb-12 transition duration-300 hover:-translate-y-2 hover:shadow-[0_10px_20px_-5px_rgb(0_0_0/0.08),_0_4px_10px_-4px_rgb(0_0_0/0.05)]">
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 items-center">
 
-        {/* LEFT COLUMN: TEXT CONTENT */}
+        {/* LEFT COLUMN: TEXT */}
         <div className={`order-2 ${contentOrder}`}>
-          <h2 className="text-lg md:text-2xl font-extrabold color-blue-h1 mb-4">{group.title}</h2>
+          <h2 className="text-lg md:text-2xl font-extrabold text-blue-900 mb-4">{group.title}</h2>
           <p className="para mb-6">{group.description}</p>
 
           {/* Checkmark List */}
@@ -109,25 +101,30 @@ const ProgramCardHeroStyle = ({ group, reverse }) => {
             ))}
           </div>
 
-          {/* Ikigai Quote */}
-          <div className="flex items-start p-4 bg-yellow-50 rounded-3xl border-l-4 border-pink-500">
-            <Feather className="w-5 h-5 color-dark-pink mt-0.5 flex-shrink-0" />
-            <p className="ml-3 text-sm color-gray-dark italic">{group.ikigaiQuote}</p>
-          </div>
+         
 
           {/* Features */}
-          
+          {group.features && group.features.map((feature, idx) => (
+            <FeatureItem key={idx} {...feature} />
+          ))}
+
+           {/* Ikigai Quote */}
+          <div className="flex rounded-3xl items-start p-4 mt-6 bg-yellow-50  border-l-4 border-pink-500">
+            <Feather className="w-5 h-5 text-pink-500 mt-0.5 flex-shrink-0" />
+            <p className="ml-3 text-sm text-gray-700 italic">{group.ikigaiQuote}</p>
+          </div>
         </div>
 
         {/* RIGHT COLUMN: IMAGE */}
-        <div className={`order-1 ${blockOrder} relative w-full h-80 md:h-96 rounded-3xl overflow-hidden shadow-2xl flex items-center justify-center`}>
+        <div className={`order-1 ${blockOrder} relative w-full h-80 md:h-96  overflow-hidden shadow-2xl flex items-center justify-center`}>
           <Image
             src={group.image.src}
             alt={group.image.alt}
             fill
-            unoptimized={true}
-            className="object-cover w-full h-full rounded-3xl"
+            className="object-cover w-full h-full rounded-[11px] md:rounded-[16px]"
             priority
+            placeholder="blur"
+            blurDataURL="/images/placeholder-small.jpg" // tiny version or base64
           />
         </div>
 
@@ -140,12 +137,10 @@ const ProgramCardHeroStyle = ({ group, reverse }) => {
 const SchoolingProgramsPageHeroStyle = () => {
   return (
     <div className="section-padding">
-      <div className="secondary-container">
+      <div className="section-container">
         <header className="section-heading">
-          <h2 className="">
-            <span>Parenting Program</span>
-          </h2>
-          <p className="">
+          <h2><span>Parenting Program</span></h2>
+          <p>
             Guided by Ikigai, we support families in raising happy, balanced, and self-aware children in today’s complex world.
           </p>
         </header>
@@ -155,7 +150,7 @@ const SchoolingProgramsPageHeroStyle = () => {
             <ProgramCardHeroStyle
               key={group.id}
               group={group}
-              reverse={index % 2 !== 0} // alternate sides
+              reverse={index % 2 !== 0}
             />
           ))}
         </div>

@@ -89,6 +89,7 @@
     --theme-blue-light-300-50: rgba(92, 103, 242, 0.5);
     --theme-yellow-500-300-50: rgba(245, 158, 11, 0.5);
     --color-danger: #e74c3c;
+    --color-blue-menu: #0d2c54e6;
 
 }
 }
@@ -213,7 +214,6 @@
 
 .neumorphic-card {
   background-color: #e0e5ec; 
-  padding: 1.5rem;
   z-index: 1;
   box-shadow: 
     20px 20px 60px #bec3c9, 
@@ -321,6 +321,16 @@
     }
 }
 
+.card-padding {
+  padding: calc(var(--spacing) * 4); /* equivalent to p-4 on small screens */
+}
+
+@media (min-width: 768px) {
+  .card-padding {
+    padding: calc(var(--spacing) * 6); /* equivalent to md:p-6 */
+  }
+}
+
 /* === Activity === */
 /* === Learning Model === */
 .neumorphic-gradient-card {
@@ -338,19 +348,12 @@
     inset -5px -5px 10px #ffffff;
 }
 .neumorphic-gradient-card-green {
-  border-radius: 1.5rem;
   background: linear-gradient(to top right, #bfdbfe, #ffffff, #d1fae5); 
-  padding: 2rem; 
   text-align: center; 
   backdrop-filter: blur(12px);
   box-shadow: 10px 10px 30px #bec3c9, -10px -10px 30px #ffffff; 
 }
 
-@media (min-width: 768px) {
-  .neumorphic-gradient-card-green {
-    padding: 3rem; 
-  }
-}
 @keyframes rotate {
   0% { transform: rotate(0deg); }
   100% { transform: rotate(360deg); }
@@ -513,6 +516,7 @@
 .color-green {color: var(--color-success);}
 .color-purple-600 {color: var(--theme-purple-600);}
 .color-link-blue {color: var(--color-header-blue);}
+.color-blue-menu {color: var(--color-blue-menu);}
 
 /* Additional Colors (Light / Dark / Accent) */
 .bg-blue-light { background-color: var(--theme-blue-light); }
@@ -541,7 +545,6 @@
 
 
 
-
   /* All base body styles */
   body {
     font-family: "Poppins", "Inter",sans-serif, "Nunito"!important;
@@ -566,44 +569,20 @@
 .section-container {
   margin-left: auto;
   margin-right: auto;
-  padding-left: 0.5rem;  
-  padding-right: 0.5rem;
+  padding-left: 1.5rem;  
+  padding-right: 1.5rem;
   z-index: 10;
 }
 @media (min-width: 640px) {
   .section-container {
-    padding-left: 1.5rem;
-    padding-right: 1.5rem;
+    padding-left: 2rem;
+    padding-right: 2rem;
   }
 }
 @media (min-width: 1024px) {
   .section-container {
-    padding-left: 2rem;
-    padding-right: 2rem; 
-  }
-}
-
-.secondary-container {
-  max-width: 80rem; /* same as max-w-7xl */
-  margin-left: auto;
-  margin-right: auto;
-  padding-left: 1rem;  /* px-4 */
-  padding-right: 1rem;
-
-  /* sm:px-6 */
-}
-@media (min-width: 640px) {
-  .secondary-container {
-    padding-left: 1.5rem;
-    padding-right: 1.5rem;
-  }
-}
-
-/* lg:px-8 */
-@media (min-width: 1024px) {
-  .secondary-container {
-    padding-left: 2rem;
-    padding-right: 2rem;
+    padding-left: 4rem;
+    padding-right: 4rem; 
   }
 }
 

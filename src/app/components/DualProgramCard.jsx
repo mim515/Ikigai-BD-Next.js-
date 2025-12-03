@@ -43,7 +43,7 @@ const FeatureItem = ({ name, icon: Icon, color }) => (
 // Reusable Card Component with Depth Hover Effect
 const ProgramCard = ({ title, tagline, features, bgColor, hoverShadow }) => {
   return (
-    <div className={`bg-white-50 group p-8 md:p-10 rounded-3xl  shadow-lg  h-full 
+    <div className={`bg-white-50 group card-padding rounded-3xl  shadow-lg  h-full 
                     transition-all duration-500 transform 
                      hover:shadow-2xl hover:${hoverShadow} cursor-pointer`}>
       
@@ -68,8 +68,15 @@ const ProgramCard = ({ title, tagline, features, bgColor, hoverShadow }) => {
 // Main App Component
 const DualProgramCard = () => {
   return (
-    <div className="pb-[100px]">
-      <div className="secondary-container">
+    <div className="section-padding">
+      <div className="section-container">
+
+        <div className="secondary-heading">
+          <h2>
+            <span>Personal & Emotional Awareness</span>
+          </h2>
+          <p>Empowering children to understand themselves, recognize emotions, make mindful choices, and develop a lifelong sense of confidence and well-being.</p>
+        </div>
         
         {/* Main Grid Container for the two cards */}
         <section className=" grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-stretch">

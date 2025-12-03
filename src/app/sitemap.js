@@ -1,18 +1,22 @@
-import {MetadataRoute} from 'next';
+// src/app/sitemap.js
+export const dynamic = "force-static";
 
-export const dynamic = 'force-static';
-export default function sitemap(){
-  const baseUrl = "www.ikigaibd.com";
+export default function sitemap() {
+  const baseUrl = "https://www.ikigaibd.com";
+
   return [
-    { url: baseUrl, 
-    lastModified: new Date(), 
-    changeFrequency: "weekly", 
-    priority: 1,
-  },
-  { url: `$(baseUrl)/about`, 
-    lastModified: new Date(), 
-    changeFrequency: "mothly", 
-    priority: 0.8,},
+    {
+      url: baseUrl,
+      lastModified: new Date(),
+      changeFrequency: "weekly",
+      priority: 1,
+    },
+    {
+      url: `${baseUrl}/about`,
+      lastModified: new Date(),
+      changeFrequency: "monthly",
+      priority: 0.8,
+    },
     {
       url: `${baseUrl}/programs`,
       lastModified: new Date(),
@@ -37,5 +41,5 @@ export default function sitemap(){
       changeFrequency: "monthly",
       priority: 0.8,
     },
-  ]
+  ];
 }

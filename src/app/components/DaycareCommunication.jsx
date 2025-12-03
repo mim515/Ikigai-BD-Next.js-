@@ -36,7 +36,7 @@ const communicationAreas = [
 const CommunicationCard = ({ title, description, Icon, accent, hoverShadow }) => {
   return (
    
-    <div className={`group py-4 px-1 md:p-8 rounded-3xl bg-white-50 backdrop-blur-sm 
+    <div className={`group card-padding rounded-3xl bg-white-50 backdrop-blur-sm 
                     transform transition-all duration-300 ease-out cursor-pointer 
                     hover:scale-[1.05]  hover:shadow-2xl 
                     hover:shadow-lg ${hoverShadow}`}>
@@ -68,12 +68,8 @@ const CommunicationCard = ({ title, description, Icon, accent, hoverShadow }) =>
 // Main App Component
 const DaycareCommunication = () => {
   return (
-    <div className="section-padding">
-      
-      
-      <div className="">
-        
-        <div className="secondary-container">
+    <div className="section-padding bg-white-50">
+        <div className="section-container">
 
           {/* Header Section */}
           <div className="secondary-heading">
@@ -96,7 +92,7 @@ const DaycareCommunication = () => {
             ))}
           </section>
         </div>
-      </div>
+      
     </div>
   );
 };

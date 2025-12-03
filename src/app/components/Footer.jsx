@@ -3,7 +3,7 @@ import React from "react";
 const Footer = () => {
   return (
     <footer className="bg-footer text-color-white pt-16 pb-8">
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="section-container ">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
           {/* Ikigai Info */}
           <div>

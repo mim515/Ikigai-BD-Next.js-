@@ -7,7 +7,7 @@ const accordionData = [
   {
     title: 'Health & Hygiene Precautions',
     content: (
-      <ul className="list-disc ml-6 space-y-2 text-gray-600">
+      <ul className="list-disc ml-1 md:ml-6 space-y-2 text-gray-600">
         <li className="flex items-start">
           <CheckCircle className="w-4 h-4 text-green-500 mr-2 mt-1 flex-shrink-0" />
           <span className='para'>Regular handwashing and daily sanitization of toys and surfaces.</span>
@@ -26,7 +26,7 @@ const accordionData = [
   {
     title: 'Parent Communication & Involvement',
     content: (
-       <ul className="list-disc ml-6 space-y-2 text-gray-600">
+       <ul className="list-disc ml-1 md:ml-6 space-y-2 text-gray-600">
         <li className="flex items-start">
           <CheckCircle className="w-4 h-4 text-green-500 mr-2 mt-1 flex-shrink-0" />
           <span className='para'>Daily reports on your child’s activities, meals, and behavior.</span>
@@ -45,7 +45,7 @@ const accordionData = [
   {
     title: 'Behavioral Guidance',
     content: (
-      <ul className="list-disc ml-6 space-y-2 text-gray-600">
+      <ul className="list-disc ml-1 md:ml-6 space-y-2 text-gray-600">
         <li className="flex items-start">
           <CheckCircle className="w-4 h-4 text-green-500 mr-2 mt-1 flex-shrink-0" />
           <span className='para'>Positive reinforcement to encourage good behavior.</span>
@@ -64,7 +64,7 @@ const accordionData = [
   {
     title: 'Admission & Enrollment',
     content: (
-      <ul className="list-disc ml-6 space-y-2 text-gray-600">
+      <ul className="list-disc ml-1 md:ml-6 space-y-2 text-gray-600">
         <li className="flex items-start">
           <CheckCircle className="w-4 h-4 text-green-500 mr-2 mt-1 flex-shrink-0" />
           <span className='para'>Clear age requirements for different groups.</span>
@@ -91,7 +91,7 @@ const CommitmentTab= () => {
   };
 
   return (
-    <section className="section-padding">
+    <section className="section-padding bg-white-50">
       <div className="section-container">
         
         {/* Main Header */}

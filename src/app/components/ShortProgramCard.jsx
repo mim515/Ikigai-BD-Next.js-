@@ -1,3 +1,4 @@
+'use client';
 import React from "react";
 import Image from "next/image";
 import { Music, Smile, Compass, BookOpen, Feather, Zap, Hand, Heart } from "lucide-react"; // Added Hand and Heart for more options
@@ -19,7 +20,7 @@ const IconMap = {
   Heart,
 };
 
-// 1. DATA DEFINITION: JSON structure updated with content from uploaded images
+// 1. DATA DEFINITION
 const CARD_DATA = [
   {
     id: 1,
@@ -32,6 +33,7 @@ const CARD_DATA = [
       alt: "Toddler playing in a colorful, secure setting.",
       width: 720,
       height: 380,
+      blurDataURL: "/images/placeholder.jpg",
     },
     features: [
       {
@@ -71,6 +73,7 @@ const CARD_DATA = [
       alt: "Child practicing fine motor skills and school readiness.",
       width: 1000,
       height: 800,
+      blurDataURL: "/images/placeholder.jpg",
     },
     features: [
       {
@@ -111,7 +114,7 @@ const FeatureItem = ({ iconKey, title, description, color }) => {
         <Icon size={15} className="text-color-white" />
       </div>
       <div>
-        <h4 className="font-semibold color-blue-h1  ">{title}</h4>
+        <h4 className="font-semibold color-blue-h1">{title}</h4>
         <p className="para">{description}</p>
       </div>
     </div>
@@ -120,22 +123,20 @@ const FeatureItem = ({ iconKey, title, description, color }) => {
 
 // GroupCard Component
 const GroupCard = ({ group, reverse }) => {
-  const { src, alt } = group.image;
+  const { src, alt, width, height, blurDataURL } = group.image;
 
   const contentOrder = reverse ? "order-2 lg:order-1" : "order-2 lg:order-1";
   const imageOrder = reverse ? "order-1 lg:order-2" : "order-1 lg:order-2";
 
   return (
-    <div className="bg-white-50 p-2 md:p-6 rounded-2xl shadow-xl overflow-hidden mb-12 transition duration-300 hover:-translate-y-2 hover:shadow-lg">
+    <div className="bg-white-50 card-padding rounded-3xl shadow-xl overflow-hidden mb-12 transition duration-300 hover:-translate-y-2 hover:shadow-lg">
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 items-center">
         {/* Content Column */}
         <div className={contentOrder}>
           <p className="color-dark-pink font-bold text-sm uppercase tracking-wider mb-2">
             {group.ageRange}
           </p>
-          <h1 className="text-lg md:text-xl font-extrabold color-blue-h1 mb-4">
-            {group.title}
-          </h1>
+          <h1 className="text-lg md:text-xl font-extrabold color-blue-h1 mb-4">{group.title}</h1>
           <p className="para mb-6">{group.description}</p>
 
           <div className="space-y-4">
@@ -153,14 +154,15 @@ const GroupCard = ({ group, reverse }) => {
 
         {/* Image Column */}
         <div
-          className={`${imageOrder} relative h-[380px] md:h-[400px] rounded-2xl overflow-hidden shadow-2xl transition-transform duration-300 transform hover:scale-[1.01]`}
+          className={`${imageOrder} relative h-[380px] md:h-[400px]  overflow-hidden shadow-2xl transition-transform duration-300 transform hover:scale-[1.01]`}
         >
           <Image
             src={src}
             alt={alt}
             fill
-            unoptimized={true}
-            className="object-cover w-full h-full"
+            className="object-cover w-full h-full rounded-[11px] md:rounded-[16px]"
+            placeholder="blur"
+            blurDataURL={blurDataURL}
             sizes="(max-width: 768px) 100vw, 50vw"
             priority
           />
@@ -174,12 +176,12 @@ const GroupCard = ({ group, reverse }) => {
 const ShortProgramCard = () => {
   return (
     <div className="section-padding">
-      <div className="secondary-container">
-        <header className="section-heading ">
-          <h2 className="">
+      <div className="section-container">
+        <header className="section-heading">
+          <h2>
             <span>Our Short Programs</span>
           </h2>
-          <p className="">
+          <p>
             Focused, purposeful courses designed to support your child through
             key developmental transitions with confidence and joy.
           </p>
@@ -191,7 +193,7 @@ const ShortProgramCard = () => {
           ))}
         </div>
 
-        <div className="text-center bg-white-50 p-8 rounded-2xl pb-12 mt-8 shadow-lg">
+        <div className="text-center bg-white-50 card-padding rounded-3xl mt-8 shadow-lg">
           <h3 className="color-blue-h1 font-extrabold mb-3 text-lg md:text-2xl">
             Ready for the Next Step?
           </h3>

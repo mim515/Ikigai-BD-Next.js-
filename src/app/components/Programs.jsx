@@ -4,26 +4,28 @@ import Image from "next/image";
 import Link from "next/link";
 
 const Programs = () => {
-const scrollToSection = (id) => {
-  const element = document.getElementById(id);
-  const tabMenu = document.querySelector(".program-nav"); // select the tab menu
-  if (element && tabMenu) {
-    const headerHeight = 150; // sticky header height
-    const tabMenuHeight = tabMenu.offsetHeight; // dynamic height (works for mobile & desktop)
-    const extraOffset = 5; // extra space below header + tab menu
+  const scrollToSection = (id) => {
+    const element = document.getElementById(id);
+    const tabMenu = document.querySelector(".program-nav"); // select the tab menu
+    if (element && tabMenu) {
+      const headerHeight = 150; // sticky header height
+      const tabMenuHeight = tabMenu.offsetHeight; // dynamic height (works for mobile & desktop)
+      const extraOffset = 5; // extra space below header + tab menu
 
-    const elementPosition = element.getBoundingClientRect().top + window.pageYOffset;
-    const offsetPosition = elementPosition - headerHeight - tabMenuHeight + extraOffset;
+      const elementPosition =
+        element.getBoundingClientRect().top + window.pageYOffset;
+      const offsetPosition =
+        elementPosition - headerHeight - tabMenuHeight + extraOffset;
 
-    // Only scroll if we're not already close to the target position
-    if (Math.abs(window.pageYOffset - offsetPosition) > 5) {
-      window.scrollTo({
-        top: offsetPosition,
-        behavior: "smooth",
-      });
+      // Only scroll if we're not already close to the target position
+      if (Math.abs(window.pageYOffset - offsetPosition) > 5) {
+        window.scrollTo({
+          top: offsetPosition,
+          behavior: "smooth",
+        });
+      }
     }
-  }
-};
+  };
 
   return (
     <section id="programs" className="section-padding bg-pastel-gradient">
@@ -44,19 +46,16 @@ const scrollToSection = (id) => {
           style={{ top: "var(--header-height)" }}
         >
           <a
-           
             onClick={() => scrollToSection("daycare")}
-             href="#daycare"
+            href="#daycare"
             data-tab="daycare"
             className="text-sm color-gray-light lg:text-lg font-semibold pb-2 border-b-2 border-transparent  transition active flex-shrink-0"
           >
             Daycare
           </a>
 
-          
-
           <a
-          onClick={() => scrollToSection("schooling")}
+            onClick={() => scrollToSection("schooling")}
             href="#schooling"
             data-tab="schooling"
             className="text-sm color-gray-light lg:text-lg font-semibold pb-2 border-b-2 border-transparent  transition flex-shrink-0"
@@ -64,7 +63,7 @@ const scrollToSection = (id) => {
             Schooling
           </a>
           <a
-          onClick={() => scrollToSection("parenting")}
+            onClick={() => scrollToSection("parenting")}
             href="#parenting"
             data-tab="parenting"
             className="text-sm color-gray-light lg:text-lg font-semibold pb-2 border-b-2 border-transparent  transition flex-shrink-0"
@@ -72,7 +71,7 @@ const scrollToSection = (id) => {
             Parenting Programs
           </a>
           <a
-          onClick={() => scrollToSection("short-programs")}
+            onClick={() => scrollToSection("short-programs")}
             href="#short-programs"
             data-tab="short-programs"
             className="text-sm color-gray-light lg:text-lg font-semibold pb-2 border-b-2 border-transparent  transition flex-shrink-0"
@@ -84,8 +83,8 @@ const scrollToSection = (id) => {
         <div className="section-container">
           <div className="program-content-wrapper">
             {/* Daycare Section */}
-           
-             <section id="daycare" className="program-content active">
+
+            <section id="daycare" className="program-content active">
               <div data-aos="fade-up" className="section-heading">
                 <h2>
                   <span>Daycare Program</span>
@@ -99,7 +98,7 @@ const scrollToSection = (id) => {
               {/* Ikigai Approach Section */}
               <div
                 data-aos="fade-up"
-                className="box-shadow-pink rounded-2xl p-8 md:p-12 lg:p-16 mb-20 lg:mb-28"
+                className="box-shadow-pink rounded-2xl card-padding mb-20 lg:mb-28"
               >
                 <div className="grid lg:grid-cols-2 items-center gap-12 lg:gap-16">
                   <div>
@@ -300,10 +299,7 @@ const scrollToSection = (id) => {
               </div>
 
               {/* Core Focus Areas */}
-              <div
-                data-aos="fade-up"
-                className="max-w-4xl mx-auto"
-              >
+              <div data-aos="fade-up" className="max-w-4xl mx-auto">
                 <div className="text-center mb-14">
                   <h3 className="heading-blue">Core Focus Areas</h3>
                   <p className="color-gray-light">
@@ -413,12 +409,15 @@ const scrollToSection = (id) => {
               </div>
 
               <div className="text-center mt-10">
-                <a href="#" className="btn-neumorphic border-animated inline-flex color-dark-pink items-center">Know More About Daycare
-                  <i className="fas fa-arrow-right ml-2"></i></a>
-      
+                <a
+                  href="#"
+                  className="btn-neumorphic border-animated inline-flex color-dark-pink items-center"
+                >
+                  Know More About Daycare
+                  <i className="fas fa-arrow-right ml-2"></i>
+                </a>
               </div>
             </section>
-           
 
             {/* Schooling Section */}
             <section id="schooling" className="program-content">
@@ -434,7 +433,7 @@ const scrollToSection = (id) => {
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 ">
                 <div
                   data-aos="fade-up"
-                  className="neumorphic-gradient-card-green p-8 text-center"
+                  className="neumorphic-gradient-card-green rounded-3xl card-padding text-center"
                 >
                   <div className="circle-box-2 opacity-60 bg-pink-300-50 color-dark-pink mx-auto">
                     <svg
@@ -460,7 +459,7 @@ const scrollToSection = (id) => {
                     and playful interaction.
                   </p>
                 </div>
-                <div className="neumorphic-gradient-card-green  text-center">
+                <div className="neumorphic-gradient-card-green rounded-3xl card-padding text-center">
                   <div className="circle-box-2 opacity-60 bg-yellow-300-50 color-dark-yellow mx-auto">
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
@@ -485,7 +484,7 @@ const scrollToSection = (id) => {
                     through guided play and creativity.
                   </p>
                 </div>
-                <div className="p8 neumorphic-gradient-card-green  text-center">
+                <div className=" rounded-3xl  neumorphic-gradient-card-green card-padding text-center">
                   <div className="circle-box-2 opacity-60 bg-blue-300-50 color-dark-blue mx-auto">
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
@@ -513,8 +512,13 @@ const scrollToSection = (id) => {
                 </div>
               </div>
               <div className="mt-10 text-center">
-                <a href="#" className="btn-neumorphic border-animated inline-flex items-center color-dark-pink">Know More About Schooling
-                  <i className="fas fa-arrow-right ml-2"></i></a>
+                <a
+                  href="#"
+                  className="btn-neumorphic border-animated inline-flex items-center color-dark-pink"
+                >
+                  Know More About Schooling
+                  <i className="fas fa-arrow-right ml-2"></i>
+                </a>
               </div>
             </section>
 
@@ -530,7 +534,7 @@ const scrollToSection = (id) => {
                 </p>
               </div>
               <div className="grid lg:grid-cols-2 gap-10 items-center">
-                <div className="glass p-6 md:p-12 rounded-2xl shadow-xl">
+                <div className="glass card-padding rounded-2xl shadow-xl">
                   <h3 className="heading-blue">Mindful Parenting Workshops</h3>
                   <p className="color-gray-dark my-4">
                     Our workshops provide a supportive space to learn practical
@@ -543,7 +547,7 @@ const scrollToSection = (id) => {
                     View Workshop Schedule &rarr;
                   </a>
                 </div>
-                <div className="glass p-6 md:p-12 rounded-2xl shadow-xl">
+                <div className="glass card-padding rounded-2xl shadow-xl">
                   <h3 className="heading-blue">
                     Parent-Child Discovery Sessions
                   </h3>
@@ -560,8 +564,13 @@ const scrollToSection = (id) => {
                 </div>
               </div>
               <div className="mt-10 text-center">
-                <a href="#" className="btn-neumorphic border-animated inline-flex items-center color-dark-pink">Know More About Parenting Program
-                  <i className="fas fa-arrow-right ml-2"></i></a>
+                <a
+                  href="#"
+                  className="btn-neumorphic border-animated inline-flex items-center color-dark-pink"
+                >
+                  Know More About Parenting Program
+                  <i className="fas fa-arrow-right ml-2"></i>
+                </a>
               </div>
             </section>
 
@@ -583,8 +592,10 @@ const scrollToSection = (id) => {
                     alt="A toddler playing and developing"
                     width={760}
                     height={380}
-                    unoptimized={true}
                     className="rounded-2xl shadow-2xl object-cover w-full"
+                    placeholder="blur"
+                    blurDataURL="/images/placeholder-small.jpg" // small blurry version or base64
+                    priority // optional if it's above the fold
                   />
                 </div>
                 <div className="lg:order-1">
@@ -614,8 +625,10 @@ const scrollToSection = (id) => {
                     alt="Children preparing for school happily"
                     width={760}
                     height={450}
-                    unoptimized={true}
                     className="rounded-2xl shadow-2xl object-cover"
+                    placeholder="blur"
+                    blurDataURL="/images/article04-small.jpg" // tiny blur version or base64
+                    priority
                   />
                 </div>
                 <div>
@@ -639,8 +652,13 @@ const scrollToSection = (id) => {
                 </div>
               </div>
               <div className="mt-10 text-center mt-10">
-                <a href="#" className="btn-neumorphic border-animated inline-flex items-center color-dark-pink">Know More About Short Programs
-                  <i className="fas fa-arrow-right ml-2"></i></a>
+                <a
+                  href="#"
+                  className="btn-neumorphic border-animated inline-flex items-center color-dark-pink"
+                >
+                  Know More About Short Programs
+                  <i className="fas fa-arrow-right ml-2"></i>
+                </a>
               </div>
             </section>
           </div>

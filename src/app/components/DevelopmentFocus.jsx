@@ -53,14 +53,14 @@ const DevelopmentFocus = () => {
         </div>
         
         {/* --- Cards Container --- */}
-        <div className="flex flex-wrap justify-center gap-2">
+        <div className="grid grid-cols-2 md:grid-cols-5 justify-center gap-1">
           {focusAreas.map((focus) => (
             <div
               key={focus.name}
               className="w-full max-w-[220px] p-2" 
             >
               <div
-                className="bg-white-50 p-6 rounded-xl shadow-lg 
+                className="bg-white-50 card-padding rounded-xl shadow-lg 
                            hover:shadow-2xl transition-shadow duration-300 
                            h-full flex flex-col justify-center items-center"
               >

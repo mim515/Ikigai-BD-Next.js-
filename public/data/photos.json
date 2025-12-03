@@ -1,0 +1,218 @@
+[
+  {
+    "id": 1,
+    "src": "/images/article05.jpg",
+    "alt": "Horse in field",
+    "featured": true,
+    "height": "medium",
+    "title": "Kids Enjoying a Horse Ride"
+  },
+  {
+    "id": 2,
+    "src": "/images/article02.jpg",
+    "alt": "White cat with golden eyes",
+    "featured": true,
+    "height": "short",
+    "title": "School Cat Watching Playtime"
+  },
+  {
+    "id": 3,
+    "src": "/images/about-us-cover.jpg",
+    "alt": "Tabby cat sitting",
+    "featured": true,
+    "height": "medium",
+    "title": "Curious Tabby in Classroom"
+  },
+  {
+    "id": 4,
+    "src": "/images/article01.jpg",
+    "alt": "Golden retriever",
+    "featured": true,
+    "height": "short",
+    "title": "Playful Puppy with Kids"
+  },
+  {
+    "id": 5,
+    "src": "/images/article04.jpg",
+    "alt": "Modern minimalist interior",
+    "featured": false,
+    "height": "medium",
+    "title": "Bright and Fun Classroom"
+  },
+  {
+    "id": 6,
+    "src": "/images/play.jpg",
+    "alt": "Ocean sunset",
+    "featured": false,
+    "height": "medium",
+    "title": "Kids Playing by the Beach"
+  },
+  {
+    "id": 7,
+    "src": "/images/article03.jpg",
+    "alt": "Desert landscape",
+    "featured": true,
+    "height": "medium",
+    "title": "Adventure in the School Playground"
+  },
+  {
+    "id": 8,
+    "src": "/images/curriculum.jpg",
+    "alt": "Curriculum program",
+    "featured": true,
+    "height": "short",
+    "title": "Exciting Learning Activities"
+  },
+  {
+    "id": 9,
+    "src": "/images/preplay.jpg",
+    "alt": "Preplay activity",
+    "featured": false,
+    "height": "medium",
+    "title": "Preplay Fun for Kids"
+  },
+  {
+    "id": 10,
+    "src": "/images/daycare.jpg",
+    "alt": "Daycare facility",
+    "featured": true,
+    "height": "short",
+    "title": "Happy Daycare Moments"
+  },
+  {
+    "id": 11,
+    "src": "/images/img_4215.jpg",
+    "alt": "Kids activity",
+    "featured": false,
+    "height": "medium",
+    "title": "Interactive Classroom Fun"
+  },
+  {
+    "id": 12,
+    "src": "/images/img_7331.jpg",
+    "alt": "Outdoor play",
+    "featured": false,
+    "height": "short",
+    "title": "Outdoor Games and Play"
+  },
+  {
+    "id": 13,
+    "src": "/images/img_7334.jpg",
+    "alt": "Classroom fun",
+    "featured": true,
+    "height": "medium",
+    "title": "Exciting Classroom Activities"
+  },
+  {
+    "id": 14,
+    "src": "/images/img_7853.jpg",
+    "alt": "Painting activity",
+    "featured": true,
+    "height": "medium",
+    "title": "Creative Painting Time"
+  },
+  {
+    "id": 15,
+    "src": "/images/img_8523.jpg",
+    "alt": "Story time",
+    "featured": true,
+    "height": "short",
+    "title": "Story Time Adventures"
+  },
+  {
+    "id": 16,
+    "src": "/images/img_9137.jpg",
+    "alt": "Outdoor games",
+    "featured": true,
+    "height": "medium",
+    "title": "Fun Outdoor Games"
+  },
+  {
+    "id": 17,
+    "src": "/images/nursery.jpg",
+    "alt": "Nursery class",
+    "featured": true,
+    "height": "short",
+    "title": "Happy Nursery Class"
+  },
+  {
+    "id": 18,
+    "src": "/images/parenting-program03.jpg",
+    "alt": "Parenting program",
+    "featured": false,
+    "height": "short",
+    "title": "Parent and Child Activities"
+  },
+  {
+    "id": 19,
+    "src": "/images/step-to-shine.jpg",
+    "alt": "Step to Shine program",
+    "featured": false,
+    "height": "short",
+    "title": "Step to Shine Learning Program"
+  },
+  {
+    "id": 20,
+    "src": "/images/step-upto-school.jpg",
+    "alt": "Step Up to School",
+    "featured": false,
+    "height": "short",
+    "title": "Step Up to School Program"
+  },
+  {
+    "id": 21,
+    "src": "/images/about us.svg",
+    "alt": "About us graphic",
+    "featured": false,
+    "height": "medium",
+    "title": "About Our School"
+  },
+  {
+    "id": 22,
+    "src": "/images/Alhamra Parvin.svg",
+    "alt": "Alhamra Parvin",
+    "featured": false,
+    "height": "short",
+    "title": "Alhamra Parvin - Teacher"
+  },
+  {
+    "id": 23,
+    "src": "/images/hero.svg",
+    "alt": "Hero section",
+    "featured": false,
+    "height": "short",
+    "title": "Welcome to Our School"
+  },
+  {
+    "id": 24,
+    "src": "/images/hero1.jpg",
+    "alt": "Hero image 1",
+    "featured": false,
+    "height": "medium",
+    "title": "Kids Playing Together"
+  },
+  {
+    "id": 25,
+    "src": "/images/hero2.jpg",
+    "alt": "Hero image 2",
+    "featured": false,
+    "height": "medium",
+    "title": "Happy School Moments"
+  },
+  {
+    "id": 26,
+    "src": "/images/Mori Mariko.svg",
+    "alt": "Mori Mariko",
+    "featured": false,
+    "height": "short",
+    "title": "Mori Mariko - Staff Member"
+  },
+  {
+    "id": 27,
+    "src": "/images/Shahinoor Zeenia.svg",
+    "alt": "Shahinoor Zeenia",
+    "featured": false,
+    "height": "short",
+    "title": "Shahinoor Zeenia - Staff Member"
+  }
+]

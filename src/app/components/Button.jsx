@@ -11,9 +11,8 @@ import React from "react";
  */
 const CtaButton = ({ handleSmoothScroll, className = "", children }) => {
   return (
-    <a
-      href="#contact"
-      onClick={(e) => handleSmoothScroll(e, "#contact")}
+    <button
+      
       className={`
         text-white font-bold rounded-full
         bg-gradient-to-r from-pink-500 to-purple-600
@@ -24,7 +23,7 @@ const CtaButton = ({ handleSmoothScroll, className = "", children }) => {
       `}
     >
       {children}
-    </a>
+    </button>
   );
 };
 

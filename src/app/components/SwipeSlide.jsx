@@ -53,17 +53,17 @@ export default function TestimonialSlider() {
   return (
     <div className="relative">
       {/* Custom Arrows */}
-      <button 
+      <button
         ref={prevRef}
-        className="absolute block left-[-10px] md:right-[-20px] top-1/2 -translate-y-1/2 z-10 bg-blue-300-50 h-[35px] w-[35px] md:h-[45px] md:w-[45px] cursor-pointer rounded-full shadow-md"
+        className="absolute left-[-10px] top-1/2 -translate-y-1/2 z-10 h-[35px] w-[35px] md:h-[45px] md:w-[45px] rounded-full bg-blue-300/50 shadow-md flex items-center justify-center cursor-pointer"
       >
-        <i className="fa-solid fa-arrow-left text-xl md:font-semibold font-light text-[#000000]"></i>
+        <i className="fa-solid fa-arrow-left text-xl md:text-2xl text-black"></i>
       </button>
       <button
         ref={nextRef}
-        className="absolute block right-[-10px] md:right-[-20px] top-1/2 -translate-y-1/2 z-10 bg-blue-300-50 h-[35px] w-[35px] md:h-[45px] md:w-[45px] cursor-pointer rounded-full shadow-md"
+        className="absolute right-[-10px] top-1/2 -translate-y-1/2 z-10 h-[35px] w-[35px] md:h-[45px] md:w-[45px] rounded-full bg-blue-300/50 shadow-md flex items-center justify-center cursor-pointer"
       >
-        <i className="fa-solid fa-arrow-right text-xl md:font-semibold font-light text-[#000000]"></i>
+        <i className="fa-solid fa-arrow-right text-xl md:text-2xl text-black"></i>
       </button>
 
       {loaded && (
@@ -71,8 +71,7 @@ export default function TestimonialSlider() {
           <Swiper
             modules={[Navigation, Pagination, Autoplay]}
             onBeforeInit={(swiper) => {
-              // Swap the references here for correct behavior
-              swiper.params.navigation.prevEl = nextRef.current; 
+              swiper.params.navigation.prevEl = nextRef.current;
               swiper.params.navigation.nextEl = prevRef.current;
             }}
             navigation={{ prevEl: nextRef.current, nextEl: prevRef.current }}
@@ -82,39 +81,44 @@ export default function TestimonialSlider() {
             spaceBetween={30}
             breakpoints={{
               0: { slidesPerView: 1 },
-              340: { slidesPerView: 1 },
-              640: { slidesPerView: 2 },
+              640: { slidesPerView: 1 },
+              768: { slidesPerView: 2 },
               1024: { slidesPerView: 2 },
               1280: { slidesPerView: 3 },
             }}
           >
-            {testimonialsData.map(({ name, role, quote, imgSrc, alt }, index) => (
-              <SwiperSlide key={index} className="">
-                <div className="py-8">
-                  <aside className="h-full w-full">
-                  <div className="rounded-lg neumorphic-gradient-card-green bg-opacity-10 shadow-md flex flex-col items-center justify-between min-h-[400px] ">
-                    <i className="fa-solid fa-quote-left w-10 h-10 color-dark-pink text-3xl mb-2"></i>
-                    <div className="w-30 h-30 rounded-full overflow-hidden mb-4">
-                      <Image
-                        src={imgSrc}
-                        alt={alt}
-                        width={100}
-                        height={100}
-                        className="object-cover w-full h-full"
-                      />
-                    </div>
-                    <div>
-                      <h3 className="text-center font-semibold text-lg color-h1-blue">
-                        {name}
-                      </h3>
-                      <small className="text-sm color-dark-pink font-medium">{role}</small>
-                      <p className="text-sm mt-2 color-gray-dark">{quote}</p>
+            {testimonialsData.map(
+              ({ name, role, quote, imgSrc, alt }, index) => (
+                <SwiperSlide key={index}>
+                  <div className="py-8 flex justify-center">
+                    <div className="rounded-3xl neumorphic-gradient-card-green bg-opacity-10 shadow-md flex flex-col items-center justify-between min-h-[400px] card-padding">
+                      <i className="fa-solid fa-quote-left w-10 h-10 color-dark-pink text-3xl mb-2"></i>
+                      <div className="w-28 h-28 md:w-32 md:h-32 rounded-full overflow-hidden mb-4">
+                        <Image
+                          src={imgSrc}
+                          alt={alt}
+                          width={128}
+                          height={128}
+                          className="object-cover w-full h-full"
+                          priority={index < 2} // prioritize first two slides
+                          sizes="(max-width: 768px) 100vw, 128px"
+                          placeholder="empty" // optional: adds a blur effect while loading
+                        />
+                      </div>
+                      <div className="text-center">
+                        <h3 className="font-semibold text-lg color-blue-h1">
+                          {name}
+                        </h3>
+                        <small className="text-sm color-dark-pink font-medium">
+                          {role}
+                        </small>
+                        <p className="text-sm mt-2 color-gray-dark">{quote}</p>
+                      </div>
                     </div>
                   </div>
-                </aside>
-                </div>
-              </SwiperSlide>
-            ))}
+                </SwiperSlide>
+              )
+            )}
           </Swiper>
 
           {/* Pagination below slides */}

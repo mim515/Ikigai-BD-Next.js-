@@ -2,34 +2,33 @@ import React from "react";
 import emailjs from "emailjs-com";
 
 const Contact = () => {
-
   const sendEmail = (e) => {
-  e.preventDefault(); // prevent page reload
+    e.preventDefault(); // prevent page reload
 
-  emailjs
-    .sendForm(
-      process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID,
-      process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID,
-      e.target,
-      process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY
-    )
-    .then(
-      (result) => {
-        console.log(result.text);
-        alert("Message sent successfully!");
-      },
-      (error) => {
-        console.log(error.text);
-        alert("Failed to send message.");
-      }
-    );
+    emailjs
+      .sendForm(
+        process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID,
+        process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID,
+        e.target,
+        process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY
+      )
+      .then(
+        (result) => {
+          console.log(result.text);
+          alert("Message sent successfully!");
+        },
+        (error) => {
+          console.log(error.text);
+          alert("Failed to send message.");
+        }
+      );
 
-  e.target.reset(); // reset form after submission
-};
+    e.target.reset(); // reset form after submission
+  };
   return (
     <section id="contact" className="section-padding bg-contact-light-purple">
       <div className="section-container">
-        <div  data-aos="fade-up" className="section-heading">
+        <div data-aos="fade-up" className="section-heading">
           <h2>
             <span>Connect With Us</span>
           </h2>
@@ -41,16 +40,14 @@ const Contact = () => {
         </div>
         <div className="flex flex-col lg:flex-row gap-10 lg:gap-12 items-stretch">
           <div className="lg:w-3/5 xl:w-1/2 w-full animate-on-scroll">
-            <div className="glass p-8 sm:p-10 rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-300 ease-in-out h-full flex flex-col">
-              <h3 className="heading-blue">
-                Send Us a Message
-              </h3>
+            <div className="glass card-padding rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-300 ease-in-out h-full flex flex-col">
+              <h3 className="heading-blue">Send Us a Message</h3>
               <form
-  id="contactForm"
-  onSubmit={sendEmail}
-  noValidate
-  className="space-y-6 flex-grow flex flex-col"
->
+                id="contactForm"
+                onSubmit={sendEmail}
+                noValidate
+                className="space-y-6 flex-grow flex flex-col"
+              >
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 color-blue-h1">
                   <div>
                     <label
@@ -132,10 +129,10 @@ const Contact = () => {
                   ></p>
                 </div>
                 <div className="flex-grow flex flex-col">
-                  <label 
+                  <label
                     htmlFor="message"
                     className="block text-sm font-semibold mb-1.5 color-blue-h1"
-                 > 
+                  >
                     Your Message <span className="color-danger">*</span>
                   </label>
                   <textarea
@@ -169,7 +166,7 @@ const Contact = () => {
             </div>
           </div>
           <div className="lg:w-3/5 xl:w-1/2 w-full space-y-8 animate-on-scroll">
-            <div className="glass p-8 rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-300 ease-in-out transform hover:-translate-y-0.5">
+            <div className="glass card-padding rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-300 ease-in-out transform hover:-translate-y-0.5">
               <h3 className="heading-blue">
                 Opening Hours
                 <span className="ml-2 text-base font-medium color-dark-pink">
@@ -208,14 +205,14 @@ const Contact = () => {
                 </div>
               </div>
             </div>
-            <div className="glass p-8 rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-300 ease-in-out transform hover:-translate-y-0.5">
+            <div className="glass card-padding rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-300 ease-in-out transform hover:-translate-y-0.5">
               <h3 className="heading-blue">
                 Mohammadpur Branch
                 <span className="ml-2 text-sm font-semibold color-dark-pink mb-6">
-                (Head Office)
-              </span>
+                  (Head Office)
+                </span>
               </h3>
-              
+
               <address className="space-y-4  not-italic color-blue-h1">
                 <div className="flex items-start group">
                   <div className="color-dark-pink bg-pink-300-50 rounded-full p-2.5 mr-4 mt-0.5 group-hover:bg-blue-200 transition-colors duration-300 shrink-0">
@@ -260,10 +257,8 @@ const Contact = () => {
                 ></iframe>
               </div>
             </div>
-            <div className="glass p-8 rounded-2xl shadow-xl color-blue-h1 hover:shadow-2xl transition-all duration-300 ease-in-out transform hover:-translate-y-0.5">
-              <h3 className="heading-blue">
-                Gulshan Branch
-              </h3>
+            <div className="glass card-padding rounded-2xl shadow-xl color-blue-h1 hover:shadow-2xl transition-all duration-300 ease-in-out transform hover:-translate-y-0.5">
+              <h3 className="heading-blue">Gulshan Branch</h3>
               <address className="space-y-4 not-italic">
                 <div className="flex items-start group">
                   <div className="color-dark-pink bg-pink-300-50 rounded-full p-2.5 mr-4 mt-0.5  shrink-0">
@@ -316,4 +311,3 @@ const Contact = () => {
 };
 
 export default Contact;
-

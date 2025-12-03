@@ -1,5 +1,7 @@
 import Image from "next/image";
 
+const TRANSPARENT_BLUR_DATA =
+  "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII=";
 // Data for the activity cards, now included directly in the component file
 const activities = [
   {
@@ -121,14 +123,16 @@ export default function ActivitySection() {
                 <Image
                   src={activity.imageUrl}
                   alt={activity.altText}
-                  fill
-                  unoptimized = {true}
+                  fill={true}
                   style={{ objectFit: "cover", objectPosition: "center" }}
                   className="transform group-hover:scale-105 transition-transform duration-500 ease-in-out"
+                  placeholder="blur"
+                  blurDataURL={TRANSPARENT_BLUR_DATA}
+                  sizes="(max-width: 640px) 100vw, (max-width: 1200px) 50vw, 33vw"
                 />
               </div>
 
-              <div className="p-6 flex flex-col flex-grow">
+              <div className="card-padding flex flex-col flex-grow">
                 <h3 className="text-2xl font-bold color-h1-blue mb-2 leading-snug">
                   {activity.title}
                 </h3>

@@ -57,12 +57,12 @@ const AwarenessCard = ({ card }) => {
   );
 
   return (
-    <div className="bg-white-50 p-4 md:p-8 rounded-2xl shadow-lg   transition duration-300 hover:shadow-2xl">
+    <div className="bg-white-50 card-padding rounded-2xl shadow-lg   transition duration-300 hover:shadow-2xl">
       <h3 className="text-xl font-bold color-blue-h1">{card.title}</h3>
       <p className="para my-4">{card.description}</p>
 
       {/* Ikigai Quote Section */}
-      <div className={`flex items-start p-3 bg-gray-50 rounded-lg border-l-4 ${card.quoteColor}`}>
+      <div className={`flex items-start p-3 bg-gray-50 rounded-3xl border-l-4 ${card.quoteColor}`}>
         {QuoteIcon}
         <p className="ml-1 text-sm para italic">
           {card.quote}
@@ -103,7 +103,7 @@ const ActivityFeatureItem = ({ feature }) => {
 export default function ParentingActivities() {
   return (
     <div className="pb-[100px]">
-      <div className="secondary-container">
+      <div className="section-container">
 
         {/* --- 1. TOP SECTION --- */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16 md:mb-24">
@@ -113,7 +113,7 @@ export default function ParentingActivities() {
         </div>
 
         {/* --- 2. BOTTOM SECTION --- */}
-        <div className="bg-white-50 p-4 md:p-12 rounded-3xl shadow-2xl">
+        <div className="bg-white-50 card-padding rounded-3xl shadow-2xl">
           <header className="text-center mb-12">
             <h2 className="text-lg md:text-3xl font-extrabold color-gray-dark mb-4">
               Ongoing Growth & Regular Activities
@@ -131,8 +131,8 @@ export default function ParentingActivities() {
           </div>
 
           {/* Bottom Quote */}
-          <div className="flex justify-center mt-12">
-            <div className="flex items-start p-4 bg-red-50 rounded-lg border-l-4 border-pink-500 max-w-md">
+          <div className="flex justify-center mt-8">
+            <div className="flex items-start p-4 bg-red-50 rounded-3xl border-l-4 border-pink-500 max-w-md">
               <span className="text-2xl mr-2">🕊️</span>
               <p className="ml-1 text-sm text-gray-700 italic">
                 Parenting is not a destination—it's a purpose lived daily.

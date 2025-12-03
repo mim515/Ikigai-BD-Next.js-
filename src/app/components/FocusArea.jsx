@@ -44,7 +44,7 @@ const focusAreas = [
 const FocusCard = ({ title, description, Icon, color, bgColor }) => {
   return (
     // Apply hover effect here: subtle scale up, increased shadow, and smooth transition
-    <div className="bg-white-50 p-4 md:p-6 rounded-2xl shadow-lg transition duration-300
+    <div className="bg-white-50 card-padding rounded-2xl shadow-lg transition duration-300
                      hover:scale-[1.03] hover:shadow-2xl 
                     flex flex-col items-center text-center h-full">
 
@@ -59,7 +59,7 @@ const FocusCard = ({ title, description, Icon, color, bgColor }) => {
       </h3>
 
       {/* Description */}
-      <p className="text-gray-600 text-base">
+      <p className="para">
         {description}
       </p>
     </div>
@@ -70,7 +70,7 @@ const FocusCard = ({ title, description, Icon, color, bgColor }) => {
 const FocusArea = () => {
   return (
     <div className="section-padding">
-      <div className="secondary-container">
+      <div className="section-container">
 
         <div className='section-heading'>
           <h2>

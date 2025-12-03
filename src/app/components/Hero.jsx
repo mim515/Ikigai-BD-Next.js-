@@ -2,7 +2,6 @@ import React from "react";
 import CtaButton from "./Button";
 import Image from "next/image";
 
-
 // Helper components for icons to keep the main component clean
 const RocketIcon = () => (
   <svg
@@ -108,112 +107,121 @@ const App = () => {
         id="hero"
         className="relative flex  items-center justify-center overflow-hidden bg-pastel-gradient pt-12 pb-18 font-sans"
       >
-        
         <div className="section-container">
-            {/* Animated Gradient Blobs */}
-        <div className="absolute inset-0 h-full w-full">
-          <div className="absolute top-[-20%] left-[10%] h-[500px] w-[500px] animate-[morph_8s_ease-in-out_infinite] rounded-full bg-purple-300-50 opacity-60 blur-3xl"></div>
-          <div className="absolute top-[20%] right-[5%] h-[400px] w-[600px] animate-[morph_8s_ease-in-out_2s_infinite] rounded-full bg-pink-300-50 opacity-60 blur-3xl"></div>
-          <div className="absolute bottom-[-10%] left-[25%] h-[300px] w-[500px] animate-[morph_8s_ease-in-out_4s_infinite] rounded-full bg-blue-300-50 opacity-60 blur-3xl"></div>
-        </div>
+          {/* Animated Gradient Blobs */}
+          <div className="absolute inset-0 h-full w-full">
+            <div className="absolute top-[-20%] left-[10%] h-[500px] w-[500px] animate-[morph_8s_ease-in-out_infinite] rounded-full bg-purple-300-50 opacity-60 blur-3xl"></div>
+            <div className="absolute top-[20%] right-[5%] h-[400px] w-[600px] animate-[morph_8s_ease-in-out_2s_infinite] rounded-full bg-pink-300-50 opacity-60 blur-3xl"></div>
+            <div className="absolute bottom-[-10%] left-[25%] h-[300px] w-[500px] animate-[morph_8s_ease-in-out_4s_infinite] rounded-full bg-blue-300-50 opacity-60 blur-3xl"></div>
+          </div>
 
-        {/* Glassmorphism overlay */}
-        <div className="absolute inset-0 bg-white-30 backdrop-blur-xl"></div>
+          {/* Glassmorphism overlay */}
+          <div className="absolute inset-0 bg-white-30 backdrop-blur-xl"></div>
 
-        <div className="">
-          <div className="grid items-center gap-16 grid-cols-1 lg:grid-cols-2">
-            {/* Content Side */}
-            <div data-aos="fade-right" className="text-center lg:text-left  ">
-              <div className="mb-8 inline-flex items-center rounded-full border border-white/50 px-4 py-2 text-sm font-medium color-purple-800 welcome-shadow backdrop-blur-sm">
-                <span className="mr-2.5 h-2.5 w-2.5 animate-pulse rounded-full bg-dark-pink"></span>
-                Welcome to Ikigai Daycare & Preschool
-              </div>
-
-              {/* Main Heading with 3D Glassmorphism Effect */}
-              <h1
-                className="mb-6 text-4xl sm:text-5xl md:text-6xl lg:text-7xl  font-extrabold leading-tight color-h1-blue h1-text-shadow"
-                
-              >
-                Nurturing{" "}
-                <span className="text-gradient-purple-pink bg-clip-text text-transparent">
-                  Joy
-                </span>{" "}
-                &{" "}
-                <span className="text-gradient-pink-blue  bg-clip-text text-transparent">
-                  Curiosity
-                </span>{" "}
-                in Every Child
-              </h1>
-
-              <p className=" mb-10 text-lg leading-relaxed color-p-blue   ">
-                Where little minds blossom through playful learning and
-                discovery in a safe, loving environment designed for growth and
-                happiness.
-              </p>
-
-              {/* Neumorphic CTA Buttons */}
-              <div className="mb-10 flex flex-col justify-center  gap-6 md:flex-row lg:justify-start">
-                <CtaButton className="cta-button flex items-center justify-center">
-                 < RocketIcon  /> Explore Our Programs
-                </CtaButton>
-                <a
-                  href="#contact"
-                  className="inline-flex items-center justify-center btn-neumorphic border-animated color-dark-pink"
-                >
-                  <i className="fa-regular fa-calendar color-dark-pink mr-3"></i>
-                  Schedule a Visit
-                </a>
-              </div>
-
-              {/* Stats */}
-              <div className=" grid max-w-md grid-cols-3 gap-4 lg:mx-0">
-                <div className="text-center">
-                  <div className="text-2xl font-bold color-dark-pink">50+</div>
-                  <div className="text-sm color-p-blue">Happy Families</div>
+          <div className="">
+            <div className="grid items-center gap-16 grid-cols-1 lg:grid-cols-2">
+              {/* Content Side */}
+              <div data-aos="fade-right" className="text-center lg:text-left  ">
+                <div className="mb-8 inline-flex items-center rounded-full border border-white/50 px-4 py-2 text-sm font-medium color-purple-800 welcome-shadow backdrop-blur-sm">
+                  <span className="mr-2.5 h-2.5 w-2.5 animate-pulse rounded-full bg-dark-pink"></span>
+                  Welcome to Ikigai Daycare & Preschool
                 </div>
-                <div className="text-center">
-                  <div className="text-2xl font-bold color-dark-purple">5+</div>
-                  <div className="text-sm color-p-blue">Years Experience</div>
+
+                {/* Main Heading with 3D Glassmorphism Effect */}
+                <h1 className="mb-6 text-4xl sm:text-5xl md:text-6xl lg:text-7xl  font-extrabold leading-tight color-h1-blue h1-text-shadow">
+                  Nurturing{" "}
+                  <span className="text-gradient-purple-pink bg-clip-text text-transparent">
+                    Joy
+                  </span>{" "}
+                  &{" "}
+                  <span className="text-gradient-pink-blue  bg-clip-text text-transparent">
+                    Curiosity
+                  </span>{" "}
+                  in Every Child
+                </h1>
+
+                <p className=" mb-10 text-lg leading-relaxed color-p-blue   ">
+                  Where little minds blossom through playful learning and
+                  discovery in a safe, loving environment designed for growth
+                  and happiness.
+                </p>
+
+                {/* Neumorphic CTA Buttons */}
+                <div className="mb-10 flex flex-col justify-center  gap-6 md:flex-row lg:justify-start">
+                  <CtaButton className="cta-button flex items-center justify-center">
+                    <RocketIcon /> Explore Our Programs
+                  </CtaButton>
+                  <a
+                    href="#contact"
+                    className="inline-flex items-center justify-center btn-neumorphic border-animated color-dark-pink"
+                  >
+                    <i className="fa-regular fa-calendar color-dark-pink mr-3"></i>
+                    Schedule a Visit
+                  </a>
                 </div>
-                <div className="text-center">
-                  <div className="text-2xl font-bold color-dark-blue">100%</div>
-                  <div className="text-sm color-p-blue">Love & Care</div>
-                </div>
-              </div>
-            </div>
 
-
-           
-
-            {/* Image Side */}
-            <div  data-aos="fade-right" className="relative animate-[float_6s_ease-in-out_infinite]">
-              <div className="  relative rounded-3xl neumorphic-card ">
-                <Image className="" src="/images/hero.svg" alt="Children happily learning at Ikigai Preschool"  width={1200} height={800} priority/>
-                {/* Floating Cards with subtle neumorphism */}
-                <div className="absolute -top-1 -left-1  md:-top-6 md:-left-8 animate-[float_6s_ease-in-out_1s_infinite] rounded-2xl neumorphic-card">
-                  <div className="flex items-center space-x-1  md:space-x-2">
-                    <div className="h-3 w-3 rounded-full bg-dark-pink"></div>
-                    <span className="text-sm font-medium color-slate-dark ">
-                      Safe Environment
-                    </span>
+                {/* Stats */}
+                <div className=" grid max-w-md grid-cols-3 gap-4 lg:mx-0">
+                  <div className="text-center">
+                    <div className="text-2xl font-bold color-dark-pink">
+                      50+
+                    </div>
+                    <div className="text-sm color-p-blue">Happy Families</div>
+                  </div>
+                  <div className="text-center">
+                    <div className="text-2xl font-bold color-dark-purple">
+                      5+
+                    </div>
+                    <div className="text-sm color-p-blue">Years Experience</div>
+                  </div>
+                  <div className="text-center">
+                    <div className="text-2xl font-bold color-dark-blue">
+                      100%
+                    </div>
+                    <div className="text-sm color-p-blue">Love & Care</div>
                   </div>
                 </div>
-                <div className="absolute -bottom-9 -right-2 md:-bottom-6 md:-right-8 animate-[float_6s_ease-in-out_2s_infinite] rounded-2xl bg-[#e0e5ec] p-4 shadow-[7px_7px_15px_#bec3c9,-7px_-7px_15px_#ffffff]">
-                  <div className="flex items-center space-x-2">
-                    <div className="h-3 w-3 rounded-full bg-dark-purple"></div>
-                    <span className="text-sm font-medium color-slate-dark">
-                      Joyful Learning
-                    </span>
+              </div>
+
+              {/* Image Side */}
+              <div
+                data-aos="fade-right"
+                className="relative animate-[float_6s_ease-in-out_infinite]"
+              >
+                <div className="card-padding relative neumorphic-card ">
+                  <Image 
+                    src="/images/hero.svg"
+                    alt="Children happily learning at Ikigai Preschool"
+                    width={1200}
+                    height={800}
+                    priority
+                    className="w-full h-auto object-contain rounded-[11px] md:rounded-[16px] "
+                    placeholder="empty" // optional: adds a blur effect while loading
+                  />
+                  {/* Floating Cards with subtle neumorphism */}
+                  <div className="card-padding absolute -top-1 -left-1  md:-top-6 md:-left-8 animate-[float_6s_ease-in-out_1s_infinite] rounded-2xl neumorphic-card">
+                    <div className="flex items-center space-x-1  md:space-x-2">
+                      <div className="h-3 w-3 rounded-full bg-dark-pink"></div>
+                      <span className="text-sm font-medium color-slate-dark ">
+                        Safe Environment
+                      </span>
+                    </div>
+                  </div>
+                  <div className="absolute -bottom-9 -right-2 md:-bottom-6 md:-right-8 animate-[float_6s_ease-in-out_2s_infinite] rounded-2xl bg-[#e0e5ec] card-padding shadow-[7px_7px_15px_#bec3c9,-7px_-7px_15px_#ffffff]">
+                    <div className="flex items-center space-x-2">
+                      <div className="h-3 w-3 rounded-full bg-dark-purple"></div>
+                      <span className="text-sm font-medium color-slate-dark">
+                        Joyful Learning
+                      </span>
+                    </div>
                   </div>
                 </div>
               </div>
             </div>
           </div>
-        </div>
 
-        {/* Scroll Indicator */}
+          {/* Scroll Indicator */}
         </div>
-        
       </section>
     </>
   );

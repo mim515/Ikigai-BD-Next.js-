@@ -1,9 +1,11 @@
-User-Agent: *
-Allow: /
-Disallow: /api/
+import { MetadataRoute } from "next";
 
-User-Agent: Googlebot
-Allow: /
-Disallow: /terms-and-conditions/
-
-Sitemap: https://www.ikigaibd.com/sitemap.xml
+export default function robots(): MetadataRoute.Robots {
+  return {
+    rules: {
+      userAgent: "*",
+      allow: "/",
+    },
+    sitemap: "https://www.ikigaibd.com/sitemap.xml",
+  };
+}

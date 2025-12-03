@@ -24,7 +24,7 @@ const VisionMissionSection = () => {
 
   // Reusable Card Component
   const Card = ({ title, data, color, bgColor }) => (
-    <div className="relative p-6 sm:p-8 bg-white-50 rounded-2xl shadow-xl overflow-hidden h-full transition duration-300 hover:-translate-y-2 hover:shadow-[0_10px_20px_-5px_rgb(0_0_0/0.08),_0_4px_10px_-4px_rgb(0_0_0/0.05)]">
+    <div className="relative card-padding bg-white-50 rounded-2xl shadow-xl overflow-hidden h-full transition duration-300 hover:-translate-y-2 hover:shadow-[0_10px_20px_-5px_rgb(0_0_0/0.08),_0_4px_10px_-4px_rgb(0_0_0/0.05)]">
       
       {/* Dynamic Border/Ribbon Effect on the Left */}
       <div 

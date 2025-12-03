@@ -50,7 +50,7 @@ const articles = [
 export default function LatestArticles() {
   return (
     <section className="section-padding">
-      <div className="secondary-container">
+      <div className="section-container">
         <div className="secondary-heading">
           <h2>
             <span>Latest Articles</span>
@@ -67,13 +67,13 @@ export default function LatestArticles() {
                 <Image
                   src={article.imageUrl}
                   alt={article.altText}
-                  layout="fill" // keeps your fill behavior
-                  objectFit="cover"
-                  unoptimized={true} // <--- ADD THIS
+                  fill // same as layout="fill"
+                  style={{ objectFit: "cover" }} // object-fit behavior
                   className="rounded-t-xl"
+                  placeholder="empty" // smooth loading
                 />
               </div>
-              <div className="p-6">
+              <div className="card-padding">
                 <p className="text-sm font-semibold color-purple-600 uppercase tracking-wide mb-2">
                   {article.category}
                 </p>
